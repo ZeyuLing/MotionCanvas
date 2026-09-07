@@ -39,7 +39,8 @@ document.addEventListener('visibilitychange', syncPreviews);
 fullDemo.addEventListener('play', () => { playVisible = false; syncPreviews(); });
 document.querySelectorAll('video').forEach(video => {
   const showError = () => {
-    const message = video.nextElementSibling;
+    const message = video.nextElementSibling?.classList.contains('media-error')
+      ? video.nextElementSibling : video.closest('.benchmark-card')?.querySelector('.media-error');
     if (message?.classList.contains('media-error')) message.hidden = false;
   };
   video.addEventListener('error', showError);
@@ -95,8 +96,27 @@ const benchmarkObserver = new IntersectionObserver(entries => {
 }, {threshold: 0.05});
 benchmarkCards.forEach(card => {
   const video = card.querySelector('video');
+  // Native controls remain the no-JS fallback. A quieter cover state keeps
+  // browser loading chrome from obscuring the motion before the first play.
+  const frame = document.createElement('div');
+  frame.className = 'benchmark-media';
+  video.before(frame);
+  frame.append(video);
+  const launch = document.createElement('button');
+  launch.type = 'button';
+  launch.className = 'benchmark-play';
+  launch.setAttribute('aria-label', `Play ${card.querySelector('h3').textContent}`);
+  launch.innerHTML = '<span aria-hidden="true">▶</span> Play case';
+  frame.append(launch);
+  video.controls = false;
+  launch.addEventListener('click', () => {
+    video.controls = true;
+    play(video);
+  });
   benchmarkObserver.observe(video);
   video.addEventListener('play', () => {
+    video.controls = true;
+    launch.hidden = true;
     document.querySelectorAll('video').forEach(other => { if (other !== video) other.pause(); });
     playVisible = false;
     syncToggle();

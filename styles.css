@@ -1341,6 +1341,11 @@ a.release-link:hover small {
 .benchmark-condition b { display: block; margin-bottom: 3px; font-size: 11px; letter-spacing: .07em; text-transform: uppercase; color: #86613e; }
 .benchmark-card .benchmark-copy > p:not(.section-kicker):not(.benchmark-condition) { margin: 0 0 18px; line-height: 1.6; }
 .benchmark-card .benchmark-copy > a { margin-top: auto; line-height: 1.6; }
+.benchmark-card > .benchmark-media { padding: 0; position: relative; }
+.benchmark-play { position: absolute; left: 16px; bottom: 15px; display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 10px 16px; border: 1px solid #fff9; border-radius: 6px; background: #184a62; color: #fff; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer; box-shadow: 0 3px 12px #1a35451a; }
+.benchmark-play:hover { background: #103448; }
+.benchmark-play[hidden] { display: none; }
+.benchmark-play span { font-size: 10px; }
 @media (max-width: 1100px) { .benchmark-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .benchmark-toolbar { align-items: flex-start; } }
 @media (max-width: 760px) {
   .benchmark-grid { grid-template-columns: minmax(0,1fr); gap: 22px; }
