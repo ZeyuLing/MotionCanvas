@@ -109,6 +109,9 @@ benchmarkCards.forEach(card => {
   launch.innerHTML = '<span aria-hidden="true">▶</span> Play case';
   frame.append(launch);
   video.controls = false;
+  // A single explicit resource reports network failures on the video itself.
+  // The <source> stays in the HTML for the no-JavaScript fallback.
+  video.src = video.querySelector('source').src;
   launch.addEventListener('click', () => {
     video.controls = true;
     play(video);
