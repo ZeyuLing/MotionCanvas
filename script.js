@@ -26,7 +26,6 @@ const observer = new IntersectionObserver(entries => {
       if (!target.dataset.metadataRequested) {
         target.dataset.metadataRequested = 'true';
         target.preload = 'metadata';
-        target.load();
       }
     }
     else { visible.delete(target); target.pause(); }
