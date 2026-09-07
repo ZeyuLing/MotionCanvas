@@ -47,9 +47,12 @@ document.querySelectorAll('video').forEach(video => {
 });
 document.querySelectorAll('[data-seek]').forEach(button => {
   button.addEventListener('click', () => {
-    const seek = () => { fullDemo.currentTime = Number(button.dataset.seek); play(fullDemo); };
+    const seek = () => { fullDemo.currentTime = Number(button.dataset.seek); };
     if (fullDemo.readyState >= 1) seek();
-    else { fullDemo.addEventListener('loadedmetadata', seek, {once: true}); fullDemo.load(); }
+    else fullDemo.addEventListener('loadedmetadata', seek, {once: true});
+    // Request playback within the click gesture; waiting for metadata first
+    // can lose autoplay permission on a slow connection, especially on mobile.
+    play(fullDemo);
     fullDemo.focus({preventScroll: true});
   });
 });
