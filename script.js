@@ -21,7 +21,14 @@ const syncPreviews = () => {
 };
 const observer = new IntersectionObserver(entries => {
   entries.forEach(({target, isIntersecting}) => {
-    if (isIntersecting) visible.add(target);
+    if (isIntersecting) {
+      visible.add(target);
+      if (!target.dataset.metadataRequested) {
+        target.dataset.metadataRequested = 'true';
+        target.preload = 'metadata';
+        target.load();
+      }
+    }
     else { visible.delete(target); target.pause(); }
     if (isIntersecting && playVisible && !document.hidden) play(target);
   });
@@ -32,10 +39,12 @@ reducedMotion.addEventListener('change', () => { playVisible = false; syncPrevie
 document.addEventListener('visibilitychange', syncPreviews);
 fullDemo.addEventListener('play', () => { playVisible = false; syncPreviews(); });
 document.querySelectorAll('video').forEach(video => {
-  video.addEventListener('error', () => {
+  const showError = () => {
     const message = video.nextElementSibling;
     if (message?.classList.contains('media-error')) message.hidden = false;
-  });
+  };
+  video.addEventListener('error', showError);
+  video.querySelectorAll('source').forEach(source => source.addEventListener('error', showError));
 });
 document.querySelectorAll('[data-seek]').forEach(button => {
   button.addEventListener('click', () => {
