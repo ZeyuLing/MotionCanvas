@@ -1,0 +1,8 @@
+_qa*
+node_modules/
+.DS_Store
+Thumbs.db
+# Superseded local draft media, retained locally but not published.
+assets/results/
+assets/media/motioncanvas-full-demo-1080p.mp4
+assets/figures/motioncanvas-teaser.png

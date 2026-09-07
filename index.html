@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="MotionCanvas organizes coherent full-body motion around composable kinematic cues. Explore the paper, full video demo, benchmark results, and model release."
+    />
+    <meta name="theme-color" content="#f6f3eb" />
+    <meta property="og:title" content="MotionCanvas" />
+    <meta
+      property="og:description"
+      content="Mask-Consistent Flow Matching for Composable Kinematic Control in Human Motion Generation."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://zeyuling.github.io/MotionCanvas/assets/media/motioncanvas-title.webp"
+    />
+    <title>MotionCanvas — Composable Kinematic Control</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="#top" aria-label="MotionCanvas home">
+        <span class="wordmark-mark" aria-hidden="true">
+          <i></i><i></i><i></i><i></i>
+        </span>
+        <span>MotionCanvas</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#demo">Demo</a>
+        <a href="#results">Motions</a>
+        <a href="#benchmarks">Benchmarks</a>
+        <a href="#method">Method</a>
+        <a href="#release">Release</a>
+      </nav>
+      <a
+        class="header-cta"
+        href="https://github.com/ZeyuLing/MotionCanvas"
+        target="_blank"
+        rel="noreferrer"
+      >
+        GitHub
+        <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <main id="main">
+      <section class="hero section-shell" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Your cues. One coherent motion.</p>
+          <h1 id="hero-title">Motion<span>Canvas</span></h1>
+          <p class="paper-title">
+            Mask-Consistent Flow Matching for Composable Kinematic Control in Human Motion Generation
+          </p>
+          <p class="hero-lede">
+            Specify the moments that matter. MotionCanvas organizes a coherent full-body action around
+            them—connecting key poses, routes, local controls, and editable motion context in one model.
+          </p>
+
+          <div class="hero-actions" aria-label="Project links">
+            <a class="button button-primary" href="#demo">
+              <span class="play-icon" aria-hidden="true"></span>
+              Watch full demo
+            </a>
+            <a
+              class="button button-secondary"
+              href="#release"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Model · coming soon <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="release-status" aria-label="Release status">
+            <span><b>Paper</b> Coming soon</span>
+            <span><b>Code</b> Coming soon</span>
+            <span class="status-live"><b>Model</b> Coming soon</span>
+          </div>
+
+          <p class="authors">
+            Zeyu Ling · Di Kang · Qing Shuai · Yuxin Wen · Jing Li · Zhanke Wang · Linchao Bao · Chunchao Guo
+          </p>
+          <p class="affiliations">Zhejiang University · Hunyuan3D Team, Tencent · Peking University</p>
+        </div>
+
+        <figure class="hero-stage">
+          <a class="hero-frame" href="#demo" aria-label="Jump to the full MotionCanvas video demo">
+            <img
+              src="assets/media/motioncanvas-demo-poster.webp"
+              width="1600"
+              height="900"
+              alt="A character following a curved route under local kinematic control"
+            />
+            <span class="hero-frame-play" aria-hidden="true"><i></i></span>
+            <span class="hero-frame-meta">
+              <small>Full film</small>
+              <b>02:38 · with narration</b>
+            </span>
+          </a>
+          <figcaption>
+            A route says where to travel; a local cue shapes one body part. The model coordinates the rest.
+          </figcaption>
+          <span class="cue-orbit cue-orbit-blue" aria-hidden="true"></span>
+          <span class="cue-orbit cue-orbit-orange" aria-hidden="true"></span>
+        </figure>
+      </section>
+
+      <section class="manifesto section-shell" aria-label="MotionCanvas summary">
+        <p class="manifesto-index" aria-hidden="true">01</p>
+        <p class="manifesto-copy">
+          A motion request does not need to describe every frame. It can mark a few reliable facts—then let
+          one learned motion field plan how the action passes through them.
+        </p>
+        <div class="manifesto-legend" aria-label="Cue legend">
+          <span><i class="legend-position"></i> Position</span>
+          <span><i class="legend-rotation"></i> Rotation</span>
+          <span><i class="legend-unset"></i> To generate</span>
+        </div>
+      </section>
+
+      <section class="demo-section section-shell" id="demo" aria-labelledby="demo-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Full video</p>
+            <h2 id="demo-title">See the canvas in motion.</h2>
+          </div>
+          <p>
+            A continuous character demonstration, from drawing a route to directing a jump or a gesture,
+            with an introduction to the method. English narration and captions are included.
+          </p>
+        </div>
+
+        <div class="video-shell">
+          <video
+            id="full-demo-video"
+            controls
+            preload="none"
+            playsinline
+            poster="assets/media/motioncanvas-title.webp"
+            aria-label="Complete narrated MotionCanvas research demo"
+          >
+            <source src="assets/media/motioncanvas-v52-1080p.mp4" type="video/mp4" />
+            Your browser does not support HTML video. You can
+            <a href="assets/media/motioncanvas-v52-1080p.mp4">download the complete demo</a> instead.
+          </video>
+          <p class="media-error" hidden role="status">The video could not load. Please retry or use the download links below.</p>
+          <div class="video-caption">
+            <span>02:38 · 30 fps · English narration &amp; captions</span>
+            <div><a href="assets/media/motioncanvas-v52-1080p.mp4" download>1080p MP4</a><a href="https://github.com/ZeyuLing/MotionCanvas/releases/download/demo-v52/motioncanvas-demo-1440p.mp4">1440p original ↗</a></div>
+          </div>
+        </div>
+      <nav class="chapter-list" aria-label="Video chapters"><button type="button" data-seek="0"><span>00:00</span>Method</button><button type="button" data-seek="26.5"><span>00:27</span>Route &amp; local cues</button><button type="button" data-seek="48.6"><span>00:49</span>Footsteps &amp; heading</button><button type="button" data-seek="68.87"><span>01:09</span>Pose &amp; trajectory</button><button type="button" data-seek="84.57"><span>01:25</span>Editing</button><button type="button" data-seek="118.2"><span>01:58</span>Composed cues</button><button type="button" data-seek="144.73"><span>02:25</span>Timed hoop target</button></nav><details class="transcript"><summary>Read the narration transcript</summary><div><p>Creating character animation takes more than a text prompt. Artists sketch routes, place poses, direct body parts, and preserve existing motion. MotionCanvas maps diverse cues onto one shared time-kinematic canvas. Mask-consistent flow matching keeps assigned canvas values fixed, while one shared model coordinates the motion between and around them.</p><p>A dense route specifies where to travel. A local wrist cue controls one body part without specifying the rest of the motion. Sparse foot targets and root-heading constraints leave the transitions open. MotionCanvas connects them with a continuous, coordinated gait. A single request can combine compatible position cues, joint-rotation cues, and root-heading constraints. A few pose and trajectory cues shape the jump, while the model completes its timing and whole-body coordination.</p><p>An existing motion can also serve as editing context. Here, the original motion provides editing context, while language changes the gesture to wave the right hand. The edited motion follows the instruction while maintaining a coherent surrounding action. Because every request uses the same canvas, compatible cues can be composed without changing the generator.</p><p>Local targets guide the strike, while the model coordinates stance, timing, and recovery. This is cue-conditioned implicit motion planning: motion organized around partial specifications, without an explicit intermediate plan. Here, we provide the hoop position at the dunk time. MotionCanvas plans the full motion around it. Thank you for watching.</p><p>Goodbye.</p></div></details></section>
+
+      <section class="results-section" id="results" aria-labelledby="results-title"><div class="section-shell">
+  <div class="section-heading section-heading-light"><div><p class="section-kicker">Character showcase</p><h2 id="results-title">A little direction.<br />A whole-body response.</h2></div><div class="results-intro"><p>Six moments from the full film. Each highlights what is specified—and what the character must coordinate around it.</p><button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false">Play visible previews</button></div></div>
+  <div class="showcase-grid"><article class="motion-card"><video class="motion-preview" controls muted loop playsinline preload="none" poster="assets/showcase/route.webp" width="1280" height="720" aria-label="Route &amp; local control"><source src="assets/showcase/route.mp4" type="video/mp4" /></video><p class="media-error" hidden role="status">Preview unavailable. <a href="assets/showcase/route.mp4">Open video.</a></p><div class="motion-copy"><span>01 / Route &amp; local control</span><h3>Follow a path. Coordinate the body.</h3><p>A prescribed route guides travel; a wrist cue adds a local target to the same motion.</p></div></article>
+<article class="motion-card"><video class="motion-preview" controls muted loop playsinline preload="none" poster="assets/showcase/footsteps.webp" width="1280" height="720" aria-label="Footsteps &amp; heading"><source src="assets/showcase/footsteps.mp4" type="video/mp4" /></video><p class="media-error" hidden role="status">Preview unavailable. <a href="assets/showcase/footsteps.mp4">Open video.</a></p><div class="motion-copy"><span>02 / Footsteps &amp; heading</span><h3>Anchor the steps, connect the gait.</h3><p>Foot targets and facing constraints leave the intervening motion to the model.</p></div></article>
+<article class="motion-card"><video class="motion-preview" controls muted loop playsinline preload="none" poster="assets/showcase/jump.webp" width="1280" height="720" aria-label="Pose &amp; trajectory"><source src="assets/showcase/jump.mp4" type="video/mp4" /></video><p class="media-error" hidden role="status">Preview unavailable. <a href="assets/showcase/jump.mp4">Open video.</a></p><div class="motion-copy"><span>03 / Pose &amp; trajectory</span><h3>Shape an action through its cues.</h3><p>A jump combines pose and path constraints with whole-body coordination.</p></div></article>
+<article class="motion-card"><video class="motion-preview" controls muted loop playsinline preload="none" poster="assets/showcase/editing.webp" width="1280" height="720" aria-label="Language-guided editing"><source src="assets/showcase/editing.mp4" type="video/mp4" /></video><p class="media-error" hidden role="status">Preview unavailable. <a href="assets/showcase/editing.mp4">Open video.</a></p><div class="motion-copy"><span>04 / Language-guided editing</span><h3>“Wave with the right hand.”</h3><p>An existing motion provides context; language directs the change in gesture.</p></div></article>
+<article class="motion-card"><video class="motion-preview" controls muted loop playsinline preload="none" poster="assets/showcase/boxing.webp" width="1280" height="720" aria-label="Composed kinematic cues"><source src="assets/showcase/boxing.mp4" type="video/mp4" /></video><p class="media-error" hidden role="status">Preview unavailable. <a href="assets/showcase/boxing.mp4">Open video.</a></p><div class="motion-copy"><span>05 / Composed kinematic cues</span><h3>A target for the strike.</h3><p>Local cues guide the hands as the body coordinates stance and recovery.</p></div></article>
+<article class="motion-card"><video class="motion-preview" controls muted loop playsinline preload="none" poster="assets/showcase/basketball.webp" width="1280" height="720" aria-label="Timed spatial target"><source src="assets/showcase/basketball.mp4" type="video/mp4" /></video><p class="media-error" hidden role="status">Preview unavailable. <a href="assets/showcase/basketball.mp4">Open video.</a></p><div class="motion-copy"><span>06 / Timed spatial target</span><h3>Meet the hoop at the right moment.</h3><p>The hoop position is supplied at the dunk time to guide the complete action.</p></div></article></div>
+  <p class="showcase-note">These clips are excerpts from the rendered demonstration. Benchmark samples and their evaluation viewers are provided below.</p>
+</div></section>
+<section class="benchmark-section section-shell" id="benchmarks" aria-labelledby="benchmarks-title">
+  <div class="section-heading"><div><p class="section-kicker">Benchmark samples</p><h2 id="benchmarks-title">Explore the model’s outputs.</h2></div><p>Selected MotionCanvas results from Motius. Open each source viewer to inspect the case alongside other methods.</p></div>
+  <div class="benchmark-grid">
+    <article class="benchmark-card"><video  controls muted loop playsinline preload="none" poster="assets/benchmarks/text-to-motion.webp" width="512" height="512" aria-label="HumanML3D text-to-motion case 004822"><source src="assets/benchmarks/text-to-motion.mp4" type="video/mp4" /></video><p class="media-error" hidden role="status">Preview unavailable. <a href="assets/benchmarks/text-to-motion.mp4">Open video.</a></p><div><p class="section-kicker">Text-to-motion · HumanML3D</p><h3>Language alone, without kinematic cues.</h3><p>“Person walking at an average pace forward, swaying arms and torso with a sense of swagger.”</p><a href="https://zeyuling-t2m-humanml3d-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&amp;case=004822">Explore case 004822 ↗</a></div></article>
+    <article class="benchmark-card"><video  controls muted loop playsinline preload="none" poster="assets/benchmarks/repair.webp" width="512" height="512" aria-label="BrokenAMASS repair case repair_000"><source src="assets/benchmarks/repair.mp4" type="video/mp4" /></video><p class="media-error" hidden role="status">Preview unavailable. <a href="assets/benchmarks/repair.mp4">Open video.</a></p><div><p class="section-kicker">Motion repair · BrokenAMASS</p><h3>Reconstruct a corrupted motion.</h3><p>Regenerate affected regions while retaining reliable motion. This sample uses the known-region repair setting.</p><a href="https://zeyuling-motion-repair-brokenamass-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&amp;case=repair_000">Explore case repair_000 ↗</a></div></article>
+  </div>
+  <div class="benchmark-directory"><p>More tasks, results, and visual comparisons</p><div>
+    <a href="https://huggingface.co/spaces/ZeyuLing/temporal-condition-leaderboard">Temporal control ↗</a>
+<a href="https://huggingface.co/spaces/ZeyuLing/body-part-condition-humanml3d-leaderboard">Body-part control ↗</a>
+<a href="https://huggingface.co/spaces/ZeyuLing/babel-sequential-generation-leaderboard">Sequential generation ↗</a>
+<a href="https://huggingface.co/spaces/ZeyuLing/instruction-editing-leaderboard">Instruction editing ↗</a>
+<a href="https://huggingface.co/spaces/ZeyuLing/motion-edit-leaderboard">Style–content editing ↗</a>
+<a href="https://huggingface.co/spaces/ZeyuLing/motion-repair-brokenamass-leaderboard">Motion repair ↗</a>
+  </div></div>
+</section>
+<section class="method-section section-shell" id="method" aria-labelledby="method-title">
+        <div class="method-copy">
+          <p class="section-kicker">Method at a glance</p>
+          <h2 id="method-title">A shared canvas for partial motion assignments.</h2>
+          <p>
+            Kinematic cues are placed on a common time–kinematic-variable canvas. A shared MMDiT predicts
+            the conditional velocity field, while projected Euler updates preserve assigned entries and
+            complete the motion around them.
+          </p>
+          <div class="method-steps" aria-label="Method stages">
+            <span><b>01</b> Assign cues</span>
+            <span><b>02</b> Predict jointly</span>
+            <span><b>03</b> Project and complete</span>
+          </div>
+        </div>
+        <button class="pipeline-figure" type="button" data-lightbox-open aria-label="Open the MotionCanvas method figure at full size">
+          <img
+            src="assets/figures/motioncanvas-pipeline.png"
+            width="3380"
+            height="1862"
+            loading="lazy"
+            alt="MotionCanvas pipeline showing cue assignment, shared MMDiT prediction, projected Euler inference, motion completion, and training objectives"
+          />
+          <span>Open figure <i aria-hidden="true">↗</i></span>
+        </button>
+      </section>
+
+      <section class="release-section" id="release" aria-labelledby="release-title">
+        <div class="section-shell release-inner">
+          <div class="release-heading">
+            <p class="section-kicker">Release</p>
+            <h2 id="release-title">Follow the project.</h2>
+            <p>Explore the public benchmark viewers now. The paper, model link, and dedicated training/inference code release will follow.</p>
+          </div>
+
+          <div class="release-links">
+            <div class="release-link release-link-muted" aria-label="Paper coming soon">
+              <span>Paper</span>
+              <b>Coming soon</b>
+              <small>PDF · arXiv</small>
+            </div>
+            <div class="release-link release-link-muted" aria-label="Code coming soon">
+              <span>Code</span>
+              <b>Coming soon</b>
+              <small>Training · inference</small>
+            </div>
+            <a
+              class="release-link release-link-muted" aria-disabled="true"
+              href="#release"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>Hugging Face</span>
+              <b>Model · coming soon</b>
+              <small>The download link will appear here</small>
+            </a>
+            <a
+              class="release-link"
+              href="https://huggingface.co/spaces/ZeyuLing/temporal-condition-leaderboard"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>Hugging Face</span>
+              <b>Benchmark viewers</b>
+              <small>Metrics · visual comparisons <i aria-hidden="true">↗</i></small>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <div>
+        <a class="wordmark" href="#top"><span class="wordmark-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>MotionCanvas</span></a>
+        <p>Composable kinematic control for human motion generation.</p>
+      </div>
+      <p><a href="assets/media-manifest.json">Media sources</a> · <a href="https://github.com/ZeyuLing/MotionCanvas">GitHub</a></p>
+    </footer>
+
+    <dialog class="lightbox" data-lightbox aria-label="MotionCanvas method figure">
+      <button type="button" data-lightbox-close aria-label="Close method figure">Close <span aria-hidden="true">×</span></button>
+      <img src="assets/figures/motioncanvas-pipeline.png" alt="Enlarged MotionCanvas method pipeline" />
+    </dialog>
+  </body>
+</html>

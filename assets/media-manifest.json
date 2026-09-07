@@ -1,0 +1,84 @@
+{
+  "version": "V52",
+  "master_sha256": "800b5b9558415b856e7d36480b6c1cfeae02afd12341dbd9cf190aa16e324892",
+  "master_duration_seconds": 158.03333333333333,
+  "web_video": {
+    "path": "assets/media/motioncanvas-v52-1080p.mp4",
+    "bytes": 46134876,
+    "sha256": "54cac4596066acffd288fe8d9faa1290c935b0e2f228c847c379376f2e27d7c8"
+  },
+  "showcase_source": "Approved narrated demonstration; clips are presentation excerpts, not benchmark measurements.",
+  "clips": [
+    {
+      "id": "route",
+      "start_seconds": 27,
+      "duration_seconds": 15,
+      "path": "assets/showcase/route.mp4",
+      "sha256": "603aa59a199c25ec1adfe60e2fea8e51eb092840e4c87df336b5f4fc2e8b0db0",
+      "bytes": 3784074
+    },
+    {
+      "id": "footsteps",
+      "start_seconds": 49,
+      "duration_seconds": 10,
+      "path": "assets/showcase/footsteps.mp4",
+      "sha256": "9f299281dbc28d4c81ac0abb310fcf6063762259ea69c4f315e27062235e0e19",
+      "bytes": 2332360
+    },
+    {
+      "id": "jump",
+      "start_seconds": 69,
+      "duration_seconds": 14,
+      "path": "assets/showcase/jump.mp4",
+      "sha256": "22b43c96fa48031a02dd01a3019a029f5e1929c7093f89535a8c400a50af7a95",
+      "bytes": 3966666
+    },
+    {
+      "id": "editing",
+      "start_seconds": 89.6,
+      "duration_seconds": 17.4,
+      "path": "assets/showcase/editing.mp4",
+      "sha256": "f26cf7bbb744d5df0c1cb9b4e16cfcbf7998c2a018f9e2b9498004ad762d533c",
+      "bytes": 3348174
+    },
+    {
+      "id": "boxing",
+      "start_seconds": 118.8,
+      "duration_seconds": 10,
+      "path": "assets/showcase/boxing.mp4",
+      "sha256": "0b206169b6c9366600499c95fa1c7153e1b34d313f76d207c299f20e4b587ff8",
+      "bytes": 1925690
+    },
+    {
+      "id": "basketball",
+      "start_seconds": 144.8,
+      "duration_seconds": 7,
+      "path": "assets/showcase/basketball.mp4",
+      "sha256": "83e63c74f95021f025c0fdc0042f1e8bb798fb7a7a07f5cb1e1ac58c4b8c3a64",
+      "bytes": 2092683
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "text-to-motion",
+      "case_id": "004822",
+      "task": "text_to_motion",
+      "input": "person walking at a average pace forward, swaying arms and torso with a sense of swagger",
+      "source": "Corrected 360-frame HumanML3D Text-to-Motion evaluation pack",
+      "viewer_url": "https://zeyuling-t2m-humanml3d-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&case=004822",
+      "source_sha256": "5ae8254abe69ae9c2a76555bc46ed403110a010cdb0ea266556f43842c6a22b2",
+      "path": "assets/benchmarks/text-to-motion.mp4"
+    },
+    {
+      "id": "repair",
+      "case_id": "repair_000",
+      "task": "motion_repair",
+      "input": "Repair drifting, foot sliding, over-smoothing, and jitter while preserving the valid motion.",
+      "source": "BrokenAMASS pair-validated oracle-v6 support benchmark",
+      "viewer_url": "https://zeyuling-motion-repair-brokenamass-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&case=repair_000",
+      "source_sha256": "bfce71c730fb173c51ccd356e6c6f9e5eb19799ebce69499dc2f4c6f5797a00c",
+      "path": "assets/benchmarks/repair.mp4"
+    }
+  ],
+  "paper_figure_sha256": "3def3f5c5b202b7a02f12174c51009cd71f102f8f53be421604b47a72f92a018"
+}
