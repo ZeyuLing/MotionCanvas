@@ -5,12 +5,6 @@
 <h3 align="center">Mask-Consistent Flow Matching for Composable Kinematic Control<br />in Human Motion Generation</h3>
 
 <p align="center">
-  Zeyu Ling · Di Kang · Qing Shuai · Yuxin Wen<br />
-  Jing Li · Zhanke Wang · Linchao Bao · Chunchao Guo
-</p>
-<p align="center"><sub>Zhejiang University · Hunyuan3D Team, Tencent · Peking University</sub></p>
-
-<p align="center">
   <b><a href="https://zeyuling.github.io/MotionCanvas/">Project page</a></b> &nbsp; / &nbsp;
   <b><a href="https://zeyuling.github.io/MotionCanvas/#demo">Full video</a></b> &nbsp; / &nbsp;
   <b><a href="#benchmark-gallery">Benchmark gallery</a></b> &nbsp; / &nbsp;
