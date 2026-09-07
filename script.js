@@ -66,3 +66,39 @@ dialog.addEventListener('click', event => {
 const syncHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 18);
 window.addEventListener('scroll', syncHeader, {passive: true});
 syncHeader(); syncToggle();
+
+// Filter examples without changing their order or hiding essential context.
+const benchmarkFilters = document.querySelector('.benchmark-filters');
+const benchmarkCards = [...document.querySelectorAll('[data-benchmark-group]')];
+const benchmarkButtons = [...document.querySelectorAll('[data-benchmark-filter]')];
+benchmarkFilters.hidden = false;
+benchmarkButtons.forEach(button => button.addEventListener('click', () => {
+  const selected = button.dataset.benchmarkFilter;
+  benchmarkButtons.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+  let count = 0;
+  benchmarkCards.forEach(card => {
+    const show = selected === 'all' || card.dataset.benchmarkGroup === selected;
+    card.hidden = !show;
+    if (!show) card.querySelector('video').pause();
+    else count++;
+  });
+  document.querySelector('.benchmark-count').textContent = `${count} ${count === 1 ? 'example' : 'examples'}`;
+}));
+const benchmarkObserver = new IntersectionObserver(entries => {
+  entries.forEach(({target, isIntersecting}) => {
+    if (!isIntersecting) target.pause();
+    else if (!target.dataset.metadataRequested) {
+      target.dataset.metadataRequested = 'true';
+      target.preload = 'metadata';
+    }
+  });
+}, {threshold: 0.05});
+benchmarkCards.forEach(card => {
+  const video = card.querySelector('video');
+  benchmarkObserver.observe(video);
+  video.addEventListener('play', () => {
+    document.querySelectorAll('video').forEach(other => { if (other !== video) other.pause(); });
+    playVisible = false;
+    syncToggle();
+  });
+});

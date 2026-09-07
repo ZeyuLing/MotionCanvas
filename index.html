@@ -170,18 +170,160 @@
   <p class="showcase-note">These clips are excerpts from the rendered demonstration. Benchmark samples and their evaluation viewers are provided below.</p>
 </div></section>
 <section class="benchmark-section section-shell" id="benchmarks" aria-labelledby="benchmarks-title">
-  <div class="section-heading"><div><p class="section-kicker">Benchmark samples</p><h2 id="benchmarks-title">Explore the model’s outputs.</h2></div><p>Selected MotionCanvas results from Motius. Open each source viewer to inspect the case alongside other methods.</p></div>
-  <div class="benchmark-grid">
-    <article class="benchmark-card"><video  controls muted loop playsinline preload="none" poster="assets/benchmarks/text-to-motion.webp" width="512" height="512" aria-label="HumanML3D text-to-motion case 004822"><source src="assets/benchmarks/text-to-motion.mp4" type="video/mp4" /></video><p class="media-error" hidden role="status">Preview unavailable. <a href="assets/benchmarks/text-to-motion.mp4">Open video.</a></p><div><p class="section-kicker">Text-to-motion · HumanML3D</p><h3>Language alone, without kinematic cues.</h3><p>“Person walking at an average pace forward, swaying arms and torso with a sense of swagger.”</p><a href="https://zeyuling-t2m-humanml3d-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&amp;case=004822">Explore case 004822 ↗</a></div></article>
-    <article class="benchmark-card"><video  controls muted loop playsinline preload="none" poster="assets/benchmarks/repair.webp" width="512" height="512" aria-label="BrokenAMASS repair case repair_000"><source src="assets/benchmarks/repair.mp4" type="video/mp4" /></video><p class="media-error" hidden role="status">Preview unavailable. <a href="assets/benchmarks/repair.mp4">Open video.</a></p><div><p class="section-kicker">Motion repair · BrokenAMASS</p><h3>Reconstruct a corrupted motion.</h3><p>Regenerate affected regions while retaining reliable motion. This sample uses the known-region repair setting.</p><a href="https://zeyuling-motion-repair-brokenamass-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&amp;case=repair_000">Explore case repair_000 ↗</a></div></article>
+  <div class="section-heading"><div><p class="section-kicker">From the benchmarks</p><h2 id="benchmarks-title">Different requests.<br>One motion model.</h2></div><p>Twelve MotionCanvas inference cases across temporal control, local targets, sequential generation, editing, and text-to-motion. Each preview includes its input and a link to the original Motius viewer.</p></div>
+  <div class="benchmark-toolbar">
+    <div class="benchmark-filters" role="group" aria-label="Filter benchmark examples" hidden>
+      <button type="button" data-benchmark-filter="all" aria-pressed="true">All <span>12</span></button>
+      <button type="button" data-benchmark-filter="temporal" aria-pressed="false">Temporal <span>4</span></button>
+      <button type="button" data-benchmark-filter="body" aria-pressed="false">Body part <span>2</span></button>
+      <button type="button" data-benchmark-filter="sequential" aria-pressed="false">Sequential <span>2</span></button>
+      <button type="button" data-benchmark-filter="editing" aria-pressed="false">Editing <span>3</span></button>
+      <button type="button" data-benchmark-filter="text" aria-pressed="false">Text only <span>1</span></button>
+    </div>
+    <p class="benchmark-count" role="status" aria-live="polite">12 examples</p>
   </div>
-  <div class="benchmark-directory"><p>More tasks, results, and visual comparisons</p><div>
+  <p class="benchmark-legend">In temporal previews, amber identifies supplied poses and blue identifies generated frames. In local-control previews, the wrist marker identifies the controlled joint. Editing previews show the input on the left and MotionCanvas on the right.</p>
+  <div class="benchmark-grid">
+    <article class="benchmark-card" id="case-prediction" data-benchmark-group="temporal">
+      <video controls muted loop playsinline preload="none" poster="assets/benchmarks/prediction.webp" width="768" height="480" aria-label="Temporal control: Continue from a starting pose"><source src="assets/benchmarks/prediction.mp4" type="video/mp4" /></video>
+      <p class="media-error" hidden role="status">Preview unavailable. <a href="assets/benchmarks/prediction.mp4">Open video.</a></p>
+      <div class="benchmark-copy">
+        <p class="section-kicker">Temporal control <span>· HumanML3D</span></p>
+        <h3>Continue from a starting pose</h3>
+        <p class="benchmark-condition"><b>Input</b> First frame + text</p>
+        <p>Continue a golf swing from one supplied pose.</p>
+        <a href="https://zeyuling-temporal-condition-leaderboard.static.hf.space/cases/start_1f/index.html?method=ours&amp;case=014457">Inspect case 014457 <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="benchmark-card" id="case-body-part-reach" data-benchmark-group="body">
+      <video controls muted loop playsinline preload="none" poster="assets/benchmarks/body-part-reach.webp" width="768" height="480" aria-label="Body-part control: Coordinate around a local target"><source src="assets/benchmarks/body-part-reach.mp4" type="video/mp4" /></video>
+      <p class="media-error" hidden role="status">Preview unavailable. <a href="assets/benchmarks/body-part-reach.mp4">Open video.</a></p>
+      <div class="benchmark-copy">
+        <p class="section-kicker">Body-part control <span>· HumanML3D</span></p>
+        <h3>Coordinate around a local target</h3>
+        <p class="benchmark-condition"><b>Input</b> Sparse left-wrist position targets + text</p>
+        <p>Bend, reach, and move the arm behind the body under the same local-control interface.</p>
+        <a href="https://zeyuling-body-part-condition-humanml3d-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&amp;case=004945">Inspect case 004945 <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="benchmark-card" id="case-sequential" data-benchmark-group="sequential">
+      <video controls muted loop playsinline preload="none" poster="assets/benchmarks/sequential.webp" width="768" height="480" aria-label="Sequential generation: Compose successive actions"><source src="assets/benchmarks/sequential.mp4" type="video/mp4" /></video>
+      <p class="media-error" hidden role="status">Preview unavailable. <a href="assets/benchmarks/sequential.mp4">Open video.</a></p>
+      <div class="benchmark-copy">
+        <p class="section-kicker">Sequential generation <span>· BABEL</span></p>
+        <h3>Compose successive actions</h3>
+        <p class="benchmark-condition"><b>Input</b> Timed sequence of action descriptions</p>
+        <p>Walk, reach, lift, turn, and walk again in one sequence.</p>
+        <a href="https://zeyuling-babel-sequential-generation-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&amp;case=val_8738">Inspect case val_8738 <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="benchmark-card" id="case-instruction" data-benchmark-group="editing">
+      <video controls muted loop playsinline preload="none" poster="assets/benchmarks/instruction.webp" width="768" height="480" aria-label="Instruction editing: Change a motion with words"><source src="assets/benchmarks/instruction.mp4" type="video/mp4" /></video>
+      <p class="media-error" hidden role="status">Preview unavailable. <a href="assets/benchmarks/instruction.mp4">Open video.</a></p>
+      <div class="benchmark-copy">
+        <p class="section-kicker">Instruction editing <span>· MotionFix</span></p>
+        <h3>Change a motion with words</h3>
+        <p class="benchmark-condition"><b>Input</b> Input motion + “Make a wider turn”</p>
+        <p>Compare the input motion with the language-directed edit.</p>
+        <a href="https://zeyuling-instruction-editing-leaderboard.static.hf.space/index.html#qualitative">Source viewer · select case 0003 <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="benchmark-card" id="case-style" data-benchmark-group="editing">
+      <video controls muted loop playsinline preload="none" poster="assets/benchmarks/style.webp" width="768" height="480" aria-label="Style editing: Change style, retain the action"><source src="assets/benchmarks/style.mp4" type="video/mp4" /></video>
+      <p class="media-error" hidden role="status">Preview unavailable. <a href="assets/benchmarks/style.mp4">Open video.</a></p>
+      <div class="benchmark-copy">
+        <p class="section-kicker">Style editing <span>· Style–content benchmark</span></p>
+        <h3>Change style, retain the action</h3>
+        <p class="benchmark-condition"><b>Input</b> Input motion + “Perform hop in the angry style”</p>
+        <p>Keep the hopping action while changing its expressive style.</p>
+        <a href="https://zeyuling-motion-edit-leaderboard.static.hf.space/index.html#qualitative">Source viewer · select style case 0000 <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="benchmark-card" id="case-content" data-benchmark-group="editing">
+      <video controls muted loop playsinline preload="none" poster="assets/benchmarks/content.webp" width="768" height="480" aria-label="Content editing: Change action, retain the style"><source src="assets/benchmarks/content.mp4" type="video/mp4" /></video>
+      <p class="media-error" hidden role="status">Preview unavailable. <a href="assets/benchmarks/content.mp4">Open video.</a></p>
+      <div class="benchmark-copy">
+        <p class="section-kicker">Content editing <span>· Style–content benchmark</span></p>
+        <h3>Change action, retain the style</h3>
+        <p class="benchmark-condition"><b>Input</b> Input motion + “Change the action to walk while keeping the same style”</p>
+        <p>Change hopping into walking while retaining the input style.</p>
+        <a href="https://zeyuling-motion-edit-leaderboard.static.hf.space/index.html#qualitative">Source viewer · select content case 0002 <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="benchmark-card" id="case-keyframes" data-benchmark-group="temporal">
+      <video controls muted loop playsinline preload="none" poster="assets/benchmarks/keyframes.webp" width="768" height="480" aria-label="Temporal control: Fill between sparse keyframes"><source src="assets/benchmarks/keyframes.mp4" type="video/mp4" /></video>
+      <p class="media-error" hidden role="status">Preview unavailable. <a href="assets/benchmarks/keyframes.mp4">Open video.</a></p>
+      <div class="benchmark-copy">
+        <p class="section-kicker">Temporal control <span>· HumanML3D</span></p>
+        <h3>Fill between sparse keyframes</h3>
+        <p class="benchmark-condition"><b>Input</b> Adaptive sparse keyframes + text</p>
+        <p>Reconstruct the intervening action around scattered pose cues.</p>
+        <a href="https://zeyuling-temporal-condition-leaderboard.static.hf.space/cases/adaptive_keyframes/index.html?method=ours&amp;case=003424">Inspect case 003424 <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="benchmark-card" id="case-in-betweening" data-benchmark-group="temporal">
+      <video controls muted loop playsinline preload="none" poster="assets/benchmarks/in-betweening.webp" width="768" height="480" aria-label="Temporal control: Connect the endpoints"><source src="assets/benchmarks/in-betweening.mp4" type="video/mp4" /></video>
+      <p class="media-error" hidden role="status">Preview unavailable. <a href="assets/benchmarks/in-betweening.mp4">Open video.</a></p>
+      <div class="benchmark-copy">
+        <p class="section-kicker">Temporal control <span>· HumanML3D</span></p>
+        <h3>Connect the endpoints</h3>
+        <p class="benchmark-condition"><b>Input</b> First and last frames + text</p>
+        <p>Complete the motion between the two endpoint poses.</p>
+        <a href="https://zeyuling-temporal-condition-leaderboard.static.hf.space/cases/both_1f/index.html?method=ours&amp;case=008463">Inspect case 008463 <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="benchmark-card" id="case-no-text" data-benchmark-group="temporal">
+      <video controls muted loop playsinline preload="none" poster="assets/benchmarks/no-text.webp" width="768" height="480" aria-label="Temporal control: Continue without language"><source src="assets/benchmarks/no-text.mp4" type="video/mp4" /></video>
+      <p class="media-error" hidden role="status">Preview unavailable. <a href="assets/benchmarks/no-text.mp4">Open video.</a></p>
+      <div class="benchmark-copy">
+        <p class="section-kicker">Temporal control <span>· HumanML3D</span></p>
+        <h3>Continue without language</h3>
+        <p class="benchmark-condition"><b>Input</b> First 20% of frames · no text</p>
+        <p>Infer the continuation from motion context alone.</p>
+        <a href="https://zeyuling-temporal-condition-leaderboard.static.hf.space/cases/pre20_uncond/index.html?method=ours&amp;case=009613">Inspect case 009613 <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="benchmark-card" id="case-body-part" data-benchmark-group="body">
+      <video controls muted loop playsinline preload="none" poster="assets/benchmarks/body-part.webp" width="768" height="480" aria-label="Body-part control: Guide one wrist, complete the body"><source src="assets/benchmarks/body-part.mp4" type="video/mp4" /></video>
+      <p class="media-error" hidden role="status">Preview unavailable. <a href="assets/benchmarks/body-part.mp4">Open video.</a></p>
+      <div class="benchmark-copy">
+        <p class="section-kicker">Body-part control <span>· HumanML3D</span></p>
+        <h3>Guide one wrist, complete the body</h3>
+        <p class="benchmark-condition"><b>Input</b> Sparse left-wrist position targets + text</p>
+        <p>Guide a left-handed wave with sparse local targets.</p>
+        <a href="https://zeyuling-body-part-condition-humanml3d-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&amp;case=007995">Inspect case 007995 <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="benchmark-card" id="case-sequential-lift" data-benchmark-group="sequential">
+      <video controls muted loop playsinline preload="none" poster="assets/benchmarks/sequential-lift.webp" width="768" height="480" aria-label="Sequential generation: Connect a three-part request"><source src="assets/benchmarks/sequential-lift.mp4" type="video/mp4" /></video>
+      <p class="media-error" hidden role="status">Preview unavailable. <a href="assets/benchmarks/sequential-lift.mp4">Open video.</a></p>
+      <div class="benchmark-copy">
+        <p class="section-kicker">Sequential generation <span>· HumanML3D</span></p>
+        <h3>Connect a three-part request</h3>
+        <p class="benchmark-condition"><b>Input</b> Walk forward → lift → walk back</p>
+        <p>Connect three timed action descriptions in a continuous motion.</p>
+        <a href="https://zeyuling-babel-sequential-generation-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&amp;case=val_7982">Inspect case val_7982 <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="benchmark-card" id="case-text-to-motion" data-benchmark-group="text">
+      <video controls muted loop playsinline preload="none" poster="assets/benchmarks/text-to-motion.webp" width="768" height="480" aria-label="Text-to-motion: Start with language alone"><source src="assets/benchmarks/text-to-motion.mp4" type="video/mp4" /></video>
+      <p class="media-error" hidden role="status">Preview unavailable. <a href="assets/benchmarks/text-to-motion.mp4">Open video.</a></p>
+      <div class="benchmark-copy">
+        <p class="section-kicker">Text-to-motion <span>· HumanML3D</span></p>
+        <h3>Start with language alone</h3>
+        <p class="benchmark-condition"><b>Input</b> Text only · no kinematic cues</p>
+        <p>Generate a walk with swagger directly from its description.</p>
+        <a href="https://zeyuling-t2m-humanml3d-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&amp;case=004822">Inspect case 004822 <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+  </div>
+  <div class="benchmark-directory"><p>Explore the complete collections on Hugging Face</p><div>
     <a href="https://huggingface.co/spaces/ZeyuLing/temporal-condition-leaderboard">Temporal control ↗</a>
-<a href="https://huggingface.co/spaces/ZeyuLing/body-part-condition-humanml3d-leaderboard">Body-part control ↗</a>
-<a href="https://huggingface.co/spaces/ZeyuLing/babel-sequential-generation-leaderboard">Sequential generation ↗</a>
-<a href="https://huggingface.co/spaces/ZeyuLing/instruction-editing-leaderboard">Instruction editing ↗</a>
-<a href="https://huggingface.co/spaces/ZeyuLing/motion-edit-leaderboard">Style–content editing ↗</a>
-<a href="https://huggingface.co/spaces/ZeyuLing/motion-repair-brokenamass-leaderboard">Motion repair ↗</a>
+    <a href="https://huggingface.co/spaces/ZeyuLing/body-part-condition-humanml3d-leaderboard">Body-part control ↗</a>
+    <a href="https://huggingface.co/spaces/ZeyuLing/babel-sequential-generation-leaderboard">Sequential generation ↗</a>
+    <a href="https://huggingface.co/spaces/ZeyuLing/instruction-editing-leaderboard">Instruction editing ↗</a>
+    <a href="https://huggingface.co/spaces/ZeyuLing/motion-edit-leaderboard">Style &amp; content editing ↗</a>
+    <a href="https://huggingface.co/spaces/ZeyuLing/t2m-humanml3d-leaderboard">Text-to-motion ↗</a>
   </div></div>
 </section>
 <section class="method-section section-shell" id="method" aria-labelledby="method-title">

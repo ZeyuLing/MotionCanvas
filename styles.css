@@ -1319,3 +1319,32 @@ a.release-link:hover small {
   .site-nav a { padding-block: 8px; }
 }
 @media (prefers-reduced-motion: reduce) { .hero-frame, .hero-frame:hover { transform: none; } }
+
+/* A curated gallery with comparable framing and visible input conditions. */
+.benchmark-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin: 32px 0 16px; }
+.benchmark-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.benchmark-filters[hidden], .benchmark-card[hidden] { display: none; }
+.benchmark-filters button { min-height: 44px; padding: 10px 16px; border: 1px solid #c5d1d4; border-radius: 6px; background: transparent; color: var(--ink); cursor: pointer; font-family: inherit; font-weight: 600; font-size: 14px; line-height: 1.4; }
+.benchmark-filters button span { margin-left: 7px; font-size: 12px; font-weight: 400; }
+.benchmark-filters button[aria-pressed="true"] { color: #fff; background: #225e7c; border-color: #225e7c; }
+.benchmark-filters button:hover:not([aria-pressed="true"]) { background: #e8eef0; }
+.benchmark-count { margin: 0; color: var(--muted); font-size: 13px; white-space: nowrap; }
+.benchmark-legend { max-width: 960px; margin: 0 0 30px; color: var(--muted); font-size: 14px; line-height: 1.75; }
+.benchmark-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 26px; }
+.benchmark-card { display: flex; flex-direction: column; border: 1px solid #d2dcdf; border-radius: 10px; overflow: hidden; background: #fff; }
+.benchmark-card video { display: block; width: 100%; aspect-ratio: 8 / 5; max-height: none; border-bottom: 1px solid #e4e9e9; }
+.benchmark-card > .benchmark-copy { display: flex; flex: 1; flex-direction: column; padding: 22px; }
+.benchmark-card h3 { font-size: 23px; line-height: 1.3; margin: 13px 0 15px; }
+.benchmark-card .section-kicker { color: #245d76; line-height: 1.6; font-size: 12px; letter-spacing: .035em; }
+.benchmark-card .section-kicker span { color: var(--muted); }
+.benchmark-card p.benchmark-condition { border-left: 2px solid #cf8a5a; padding: 0 0 0 10px; margin: 0 0 12px; font-size: 14px; color: #334f5b; }
+.benchmark-condition b { display: block; margin-bottom: 3px; font-size: 11px; letter-spacing: .07em; text-transform: uppercase; color: #86613e; }
+.benchmark-card .benchmark-copy > p:not(.section-kicker):not(.benchmark-condition) { margin: 0 0 18px; line-height: 1.6; }
+.benchmark-card .benchmark-copy > a { margin-top: auto; line-height: 1.6; }
+@media (max-width: 1100px) { .benchmark-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .benchmark-toolbar { align-items: flex-start; } }
+@media (max-width: 760px) {
+  .benchmark-grid { grid-template-columns: minmax(0,1fr); gap: 22px; }
+  .benchmark-toolbar { flex-direction: column; gap: 12px; }
+  .benchmark-filters button { padding: 9px 12px; }
+  .benchmark-card h3 { font-size: 24px; }
+}

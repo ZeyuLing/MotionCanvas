@@ -1,93 +1,167 @@
-<div align="center">
+<p align="center">
+  <a href="https://zeyuling.github.io/MotionCanvas/#demo"><img src="assets/readme/cover.png" width="100%" alt="MotionCanvas — Your cues. One coherent motion. Watch the complete demonstration." /></a>
+</p>
 
-# MotionCanvas
+<h3 align="center">Mask-Consistent Flow Matching for Composable Kinematic Control<br />in Human Motion Generation</h3>
 
-### Mask-Consistent Flow Matching for Composable Kinematic Control in Human Motion Generation
+<p align="center">
+  Zeyu Ling · Di Kang · Qing Shuai · Yuxin Wen<br />
+  Jing Li · Zhanke Wang · Linchao Bao · Chunchao Guo
+</p>
+<p align="center"><sub>Zhejiang University · Hunyuan3D Team, Tencent · Peking University</sub></p>
 
-**Your cues. One coherent motion.**
-
-[Project page](https://zeyuling.github.io/MotionCanvas/) · [Full video](https://zeyuling.github.io/MotionCanvas/#demo) · [Hugging Face benchmarks](https://huggingface.co/spaces/ZeyuLing/temporal-condition-leaderboard) · [Paper — coming soon](#paper) · [Code — coming soon](#code)
-
-Zeyu Ling · Di Kang · Qing Shuai · Yuxin Wen · Jing Li · Zhanke Wang · Linchao Bao · Chunchao Guo
-
-Zhejiang University · Hunyuan3D Team, Tencent · Peking University
-
-</div>
-
-<a href="https://zeyuling.github.io/MotionCanvas/#demo"><img src="assets/media/motioncanvas-title.webp" alt="Watch MotionCanvas: the complete narrated demonstration" width="100%" /></a>
-
-<p align="center"><b><a href="https://zeyuling.github.io/MotionCanvas/#demo">▶ Watch the complete 2:38 film</a></b> · <a href="https://zeyuling.github.io/MotionCanvas/assets/media/motioncanvas-v52-1080p.mp4">1080p MP4</a> · <a href="https://github.com/ZeyuLing/MotionCanvas/releases/download/demo-v52/motioncanvas-demo-1440p.mp4">1440p original</a></p>
-
-Motion creation rarely begins with a complete frame-by-frame specification. An animator may place a
-pose, draw a route, direct one body part, preserve an existing region, or describe an edit in language.
-**MotionCanvas** brings these kinematic cues onto a shared time–kinematic-variable canvas. One
-conditional generator organizes how the complete action connects them.
-
-## Character showcase
-
-Selected excerpts from the rendered demonstration. Click a preview to watch the corresponding clip.
-
-<table>
-  <tr>
-    <td width="50%" valign="top"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/route.mp4"><img src="assets/showcase/route.webp" alt="Route &amp; local control" width="100%" /></a><br /><b>Route &amp; local control</b><br />A prescribed route guides travel; a wrist cue adds a local target to the same motion.</td>
-    <td width="50%" valign="top"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/footsteps.mp4"><img src="assets/showcase/footsteps.webp" alt="Footsteps &amp; heading" width="100%" /></a><br /><b>Footsteps &amp; heading</b><br />Foot targets and facing constraints leave the intervening motion to the model.</td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/jump.mp4"><img src="assets/showcase/jump.webp" alt="Pose &amp; trajectory" width="100%" /></a><br /><b>Pose &amp; trajectory</b><br />A jump combines pose and path constraints with whole-body coordination.</td>
-    <td width="50%" valign="top"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/editing.mp4"><img src="assets/showcase/editing.webp" alt="Language-guided editing" width="100%" /></a><br /><b>Language-guided editing</b><br />An existing motion provides context; language directs the change in gesture.</td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/boxing.mp4"><img src="assets/showcase/boxing.webp" alt="Composed kinematic cues" width="100%" /></a><br /><b>Composed kinematic cues</b><br />Local cues guide the hands as the body coordinates stance and recovery.</td>
-    <td width="50%" valign="top"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/basketball.mp4"><img src="assets/showcase/basketball.webp" alt="Timed spatial target" width="100%" /></a><br /><b>Timed spatial target</b><br />The hoop position is supplied at the dunk time to guide the complete action.</td>
-  </tr>
-</table>
-
-The project page includes individual players, chapter navigation, and the complete narration transcript.
-
-## Benchmark samples
-
-These samples are MotionCanvas inference results from the public Motius evaluation viewers, separate
-from the rendered character showcase above.
-
-<table>
-  <tr>
-    <td width="50%" valign="top"><img src="assets/benchmarks/text-to-motion.gif" alt="MotionCanvas text-to-motion inference: walking with swagger" width="100%" /><br /><b>Text-to-motion · HumanML3D</b><br />Language-only generation, without kinematic cues.<br /><a href="https://zeyuling-t2m-humanml3d-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&amp;case=004822">Inspect case 004822 and comparisons ↗</a></td>
-    <td width="50%" valign="top"><img src="assets/benchmarks/repair.gif" alt="MotionCanvas repair inference on BrokenAMASS" width="100%" /><br /><b>Motion repair · BrokenAMASS</b><br />Repair a corrupted motion using known affected regions.<br /><a href="https://zeyuling-motion-repair-brokenamass-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&amp;case=repair_000">Inspect case repair_000 and comparisons ↗</a></td>
-  </tr>
-</table>
-
-Explore more results and task settings:
-
-- [Temporal control](https://huggingface.co/spaces/ZeyuLing/temporal-condition-leaderboard) and [body-part control](https://huggingface.co/spaces/ZeyuLing/body-part-condition-humanml3d-leaderboard)
-- [Sequential generation](https://huggingface.co/spaces/ZeyuLing/babel-sequential-generation-leaderboard)
-- [Instruction editing](https://huggingface.co/spaces/ZeyuLing/instruction-editing-leaderboard) and [style–content editing](https://huggingface.co/spaces/ZeyuLing/motion-edit-leaderboard)
-- [Motion repair](https://huggingface.co/spaces/ZeyuLing/motion-repair-brokenamass-leaderboard)
-
-## Method at a glance
-
-<img src="assets/figures/motioncanvas-pipeline.png" alt="MotionCanvas: cue assignments, a shared MMDiT, projected flow sampling, completed motion, and auxiliary objectives" width="100%" />
-
-Heterogeneous kinematic cues share one motion canvas. Mask-consistent flow matching learns to
-complete motion around the supplied assignments; geometric and transition objectives support
-coherent completion.
-
-## Resources
-
-| Resource | Availability |
-| --- | --- |
-| Project page and full video | [Available](https://zeyuling.github.io/MotionCanvas/) |
-| MotionCanvas model | Hugging Face download link coming soon |
-| Training and inference code | Coming soon |
-| Paper and citation | Coming soon |
-
-### Paper
-
-The paper link and BibTeX will be added here upon release.
-
-### Code
-
-The dedicated training and inference code release is coming soon. Follow this repository for updates.
+<p align="center">
+  <b><a href="https://zeyuling.github.io/MotionCanvas/">Project page</a></b> &nbsp; / &nbsp;
+  <b><a href="https://zeyuling.github.io/MotionCanvas/#demo">Full video</a></b> &nbsp; / &nbsp;
+  <b><a href="#benchmark-gallery">Benchmark gallery</a></b> &nbsp; / &nbsp;
+  <b><a href="#resources">Paper &amp; code</a></b> &nbsp; / &nbsp;
+  <b><a href="#hugging-face">Hugging Face</a></b>
+</p>
 
 ---
 
-[Media sources](assets/media-manifest.json) · [Media notes](MEDIA.md) · [Motius](https://github.com/ZeyuLing/Motius)
+**Give the motion a pose, a path, a local target, or an edit.** MotionCanvas organizes a
+coherent full-body action around these cues. A shared motion canvas and mask-consistent
+flow matching bring heterogeneous control requests into one generative model.
+
+## Watch MotionCanvas
+
+The complete **2:38 narrated film** combines kinematic control, motion editing, and character
+animation. Explore individual scenes below, or watch it end to end.
+
+<p><b><a href="https://zeyuling.github.io/MotionCanvas/#demo">▶ Full film with chapters</a></b> &nbsp; · &nbsp; <a href="https://zeyuling.github.io/MotionCanvas/assets/media/motioncanvas-v52-1080p.mp4">1080p MP4</a> &nbsp; · &nbsp; <a href="https://github.com/ZeyuLing/MotionCanvas/releases/download/demo-v52/motioncanvas-demo-1440p.mp4">1440p original</a></p>
+
+<table>
+  <tr>
+    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/route.mp4"><img src="assets/readme/route.webp" alt="Routes &amp; local targets" width="100%" /></a><br /><b>Routes &amp; local targets</b></td>
+    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/footsteps.mp4"><img src="assets/readme/footsteps.webp" alt="Footsteps &amp; heading" width="100%" /></a><br /><b>Footsteps &amp; heading</b></td>
+    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/jump.mp4"><img src="assets/readme/jump.webp" alt="Key poses &amp; trajectories" width="100%" /></a><br /><b>Key poses &amp; trajectories</b></td>
+  </tr>
+  <tr>
+    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/editing.mp4"><img src="assets/readme/editing.webp" alt="Language-guided editing" width="100%" /></a><br /><b>Language-guided editing</b></td>
+    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/boxing.mp4"><img src="assets/readme/boxing.webp" alt="Composed hand controls" width="100%" /></a><br /><b>Composed hand controls</b></td>
+    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/basketball.mp4"><img src="assets/readme/basketball.webp" alt="Timed spatial targets" width="100%" /></a><br /><b>Timed spatial targets</b></td>
+  </tr>
+</table>
+
+## Benchmark gallery
+
+**12 MotionCanvas inference cases**, selected from Motius across seven task categories.
+The gallery covers temporal completion, body-part control, sequential generation, instruction
+editing, style editing, content editing, and text-to-motion.
+
+Each preview links to its full clip and source viewer. For edits, **input motion is on the left**
+and **MotionCanvas is on the right**. In temporal previews, amber marks supplied poses; blue
+marks generated frames. The local-control marker identifies the controlled wrist.
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://zeyuling.github.io/MotionCanvas/#case-prediction"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/prediction.webp" /><img src="assets/benchmarks/prediction.gif" loading="lazy" width="100%" alt="Motion prediction: First pose + text" /></picture></a>
+      <b>Motion prediction</b><br />
+      First pose + text
+    </td>
+    <td width="50%" valign="top">
+      <a href="https://zeyuling.github.io/MotionCanvas/#case-body-part-reach"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/body-part-reach.webp" /><img src="assets/benchmarks/body-part-reach.gif" loading="lazy" width="100%" alt="Reaching with local targets: Sparse wrist positions + text" /></picture></a>
+      <b>Reaching with local targets</b><br />
+      Sparse wrist positions + text
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://zeyuling.github.io/MotionCanvas/#case-sequential"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/sequential.webp" /><img src="assets/benchmarks/sequential.gif" loading="lazy" width="100%" alt="Sequential generation: Five timed action descriptions" /></picture></a>
+      <b>Sequential generation</b><br />
+      Five timed action descriptions
+    </td>
+    <td width="50%" valign="top">
+      <a href="https://zeyuling.github.io/MotionCanvas/#case-instruction"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/instruction.webp" /><img src="assets/benchmarks/instruction.gif" loading="lazy" width="100%" alt="Instruction editing: “Make a wider turn”" /></picture></a>
+      <b>Instruction editing</b><br />
+      “Make a wider turn”
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://zeyuling.github.io/MotionCanvas/#case-style"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/style.webp" /><img src="assets/benchmarks/style.gif" loading="lazy" width="100%" alt="Style editing: Keep hopping · add an angry style" /></picture></a>
+      <b>Style editing</b><br />
+      Keep hopping · add an angry style
+    </td>
+    <td width="50%" valign="top">
+      <a href="https://zeyuling.github.io/MotionCanvas/#case-content"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/content.webp" /><img src="assets/benchmarks/content.gif" loading="lazy" width="100%" alt="Content editing: Hop → walk · retain the style" /></picture></a>
+      <b>Content editing</b><br />
+      Hop → walk · retain the style
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://zeyuling.github.io/MotionCanvas/#case-keyframes"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/keyframes.webp" /><img src="assets/benchmarks/keyframes.gif" loading="lazy" width="100%" alt="Sparse keyframes: Scattered pose cues + text" /></picture></a>
+      <b>Sparse keyframes</b><br />
+      Scattered pose cues + text
+    </td>
+    <td width="50%" valign="top">
+      <a href="https://zeyuling.github.io/MotionCanvas/#case-in-betweening"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/in-betweening.webp" /><img src="assets/benchmarks/in-betweening.gif" loading="lazy" width="100%" alt="Motion in-betweening: Endpoint poses + text" /></picture></a>
+      <b>Motion in-betweening</b><br />
+      Endpoint poses + text
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://zeyuling.github.io/MotionCanvas/#case-no-text"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/no-text.webp" /><img src="assets/benchmarks/no-text.gif" loading="lazy" width="100%" alt="Motion-only continuation: First 20% of frames · no text" /></picture></a>
+      <b>Motion-only continuation</b><br />
+      First 20% of frames · no text
+    </td>
+    <td width="50%" valign="top">
+      <a href="https://zeyuling.github.io/MotionCanvas/#case-text-to-motion"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/text-to-motion.webp" /><img src="assets/benchmarks/text-to-motion.gif" loading="lazy" width="100%" alt="Text-to-motion: Language alone · no kinematic cues" /></picture></a>
+      <b>Text-to-motion</b><br />
+      Language alone · no kinematic cues
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://zeyuling.github.io/MotionCanvas/#case-body-part"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/body-part.webp" /><img src="assets/benchmarks/body-part.gif" loading="lazy" width="100%" alt="Local wrist control: Sparse wrist positions + text" /></picture></a>
+      <b>Local wrist control</b><br />
+      Sparse wrist positions + text
+    </td>
+    <td width="50%" valign="top">
+      <a href="https://zeyuling.github.io/MotionCanvas/#case-sequential-lift"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/sequential-lift.webp" /><img src="assets/benchmarks/sequential-lift.gif" loading="lazy" width="100%" alt="Sequential generation: Walk → lift → walk back" /></picture></a>
+      <b>Sequential generation</b><br />
+      Walk → lift → walk back
+    </td>
+  </tr>
+</table>
+
+<p align="center"><b><a href="https://zeyuling.github.io/MotionCanvas/#benchmarks">Browse all cases with task filters →</a></b></p>
+
+## One canvas, coherent completion
+
+<img src="assets/figures/motioncanvas-pipeline.png" alt="MotionCanvas pipeline: compose kinematic assignments on the canvas, predict motion with a shared MMDiT, sample through projected flow updates, and train coherent completion with geometric and transition objectives." width="100%" />
+
+- **Compose the cues.** Key poses, trajectories, local position and rotation targets share a
+  time–kinematic-variable canvas.
+- **Plan the motion.** Mask-consistent flow matching organizes the unspecified motion around
+  the supplied assignments.
+- **Edit in context.** Language and input motion support changes to an existing action.
+
+## Resources
+
+| Resource | Status |
+| :--- | :--- |
+| Project page & video | [Explore MotionCanvas](https://zeyuling.github.io/MotionCanvas/) |
+| Paper & citation | Coming soon |
+| Training & inference code | Coming soon |
+| Hugging Face model | Coming soon |
+| Benchmark viewers | Available below |
+
+### Hugging Face
+
+[Temporal control](https://huggingface.co/spaces/ZeyuLing/temporal-condition-leaderboard) ·
+[Body-part control](https://huggingface.co/spaces/ZeyuLing/body-part-condition-humanml3d-leaderboard) ·
+[Sequential generation](https://huggingface.co/spaces/ZeyuLing/babel-sequential-generation-leaderboard) ·
+[Instruction editing](https://huggingface.co/spaces/ZeyuLing/instruction-editing-leaderboard) ·
+[Style & content editing](https://huggingface.co/spaces/ZeyuLing/motion-edit-leaderboard) ·
+[Text-to-motion](https://huggingface.co/spaces/ZeyuLing/t2m-humanml3d-leaderboard)
+
+Follow this repository for the paper, model, and dedicated code release.
+
+---
+
+<sub>[Media provenance](assets/media-manifest.json) · [Media notes](MEDIA.md) · [Motius](https://github.com/ZeyuLing/Motius)</sub>

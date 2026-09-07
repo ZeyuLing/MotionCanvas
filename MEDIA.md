@@ -4,9 +4,27 @@ The narrated film and six character clips are presentation excerpts from the
 approved MotionCanvas demonstration. The website does not present these edited
 presentation clips as raw benchmark measurements.
 
-The HumanML3D and BrokenAMASS benchmark previews are copied from Motius's published
-MotionCanvas model gallery. Their case identifiers, source viewers, and media
-hashes are recorded in [the media manifest](assets/media-manifest.json).
+The benchmark gallery contains twelve persisted MotionCanvas inference cases from
+Motius: temporal prediction, in-betweening, sparse keyframes, continuation without
+text, two local wrist-control cases, two BABEL sequences, instruction editing,
+style editing, content editing, and text-to-motion. The gallery does not include
+corruption or repair previews.
+
+The previews use each benchmark viewer's SMPL decoder and original motion frames.
+No motion post-processing is applied. Camera, materials, and framing are standardized;
+editing comparisons use input and output side by side. Mesh frustum culling is
+disabled when capturing the editing viewers so moving figures remain visible.
+Original playback rates are retained (20 fps for the local-control cases and
+30 fps for the other selected cases). GIFs are short 12 fps previews; the MP4s
+contain the complete selected cases at their source playback rate.
+
+Case identifiers, input conditions, source viewers, and MP4 hashes are recorded in
+[the media manifest](assets/media-manifest.json). For the editing viewers, select
+the case index and track recorded there; these viewers do not expose case-specific
+deep links. The character film and benchmark outputs are distinct media collections.
+
+The README cover and six character stills use approved V52 frames without narration
+subtitles. Only the cover's typography and layout are new.
 
 The method figure is the paper figure used in the current demonstration.
 

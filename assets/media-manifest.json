@@ -60,25 +60,578 @@
   ],
   "benchmarks": [
     {
-      "id": "text-to-motion",
-      "case_id": "004822",
-      "task": "text_to_motion",
-      "input": "person walking at a average pace forward, swaying arms and torso with a sense of swagger",
-      "source": "Corrected 360-frame HumanML3D Text-to-Motion evaluation pack",
-      "viewer_url": "https://zeyuling-t2m-humanml3d-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&case=004822",
-      "source_sha256": "5ae8254abe69ae9c2a76555bc46ed403110a010cdb0ea266556f43842c6a22b2",
-      "path": "assets/benchmarks/text-to-motion.mp4"
+      "id": "body-part",
+      "family": "Body-part control",
+      "title": "Guide one wrist, complete the body",
+      "dataset": "HumanML3D",
+      "case_id": "007995",
+      "condition": "Sparse left-wrist position targets + text",
+      "input": {
+        "case_id": "007995",
+        "sample_id": "007995",
+        "references": [
+          "a person slowly waves with their left hand twice"
+        ],
+        "condition": {
+          "label": "Left wrist · XYZ position · sparse every 30 frames",
+          "rotation_joint_indices": [],
+          "position_joint_indices": [
+            20
+          ],
+          "position_axes": [
+            "x",
+            "y",
+            "z"
+          ]
+        },
+        "condition_intervals": [
+          [
+            0,
+            1
+          ],
+          [
+            30,
+            31
+          ],
+          [
+            60,
+            61
+          ],
+          [
+            90,
+            91
+          ],
+          [
+            120,
+            121
+          ],
+          [
+            150,
+            151
+          ],
+          [
+            180,
+            181
+          ],
+          [
+            186,
+            187
+          ]
+        ]
+      },
+      "source_url": "https://zeyuling-body-part-condition-humanml3d-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&case=007995",
+      "source_method_key": "motioncanvas",
+      "panels": [
+        "MotionCanvas"
+      ],
+      "fps": 20,
+      "frames": 187,
+      "duration_seconds": 9.35,
+      "width": 768,
+      "height": 480,
+      "path": "assets/benchmarks/body-part.mp4",
+      "bytes": 332227,
+      "sha256": "38c4a1d43f8b735170df1639120d65d742b1622160b3be6cf896976ab5e2fa2e",
+      "rendering": "Captured from Motius benchmark SMPL decoding; original motion samples and frame rate preserved. Camera, materials and framing standardized for presentation; mesh culling disabled in editing viewers to keep moving figures visible."
     },
     {
-      "id": "repair",
-      "case_id": "repair_000",
-      "task": "motion_repair",
-      "input": "Repair drifting, foot sliding, over-smoothing, and jitter while preserving the valid motion.",
-      "source": "BrokenAMASS pair-validated oracle-v6 support benchmark",
-      "viewer_url": "https://zeyuling-motion-repair-brokenamass-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&case=repair_000",
-      "source_sha256": "bfce71c730fb173c51ccd356e6c6f9e5eb19799ebce69499dc2f4c6f5797a00c",
-      "path": "assets/benchmarks/repair.mp4"
+      "id": "body-part-reach",
+      "family": "Body-part control",
+      "title": "Coordinate around a local target",
+      "dataset": "HumanML3D",
+      "case_id": "004945",
+      "condition": "Sparse left-wrist position targets + text",
+      "input": {
+        "case_id": "004945",
+        "sample_id": "004945",
+        "references": [
+          "person is bent down trying to pick up stuff, left arm is moved to the back, picks up more stuff and touches back again while bending down"
+        ],
+        "condition": {
+          "label": "Left wrist · XYZ position · sparse every 30 frames",
+          "rotation_joint_indices": [],
+          "position_joint_indices": [
+            20
+          ],
+          "position_axes": [
+            "x",
+            "y",
+            "z"
+          ]
+        },
+        "condition_intervals": [
+          [
+            0,
+            1
+          ],
+          [
+            30,
+            31
+          ],
+          [
+            60,
+            61
+          ],
+          [
+            90,
+            91
+          ],
+          [
+            120,
+            121
+          ],
+          [
+            150,
+            151
+          ],
+          [
+            180,
+            181
+          ],
+          [
+            210,
+            211
+          ],
+          [
+            224,
+            225
+          ]
+        ]
+      },
+      "source_url": "https://zeyuling-body-part-condition-humanml3d-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&case=004945",
+      "source_method_key": "motioncanvas",
+      "panels": [
+        "MotionCanvas"
+      ],
+      "fps": 20,
+      "frames": 225,
+      "duration_seconds": 11.25,
+      "width": 768,
+      "height": 480,
+      "path": "assets/benchmarks/body-part-reach.mp4",
+      "bytes": 541056,
+      "sha256": "9929d9f2f06093868e2f5ec10177dfa3289943cb5280a4f6338be704b02557d1",
+      "rendering": "Captured from Motius benchmark SMPL decoding; original motion samples and frame rate preserved. Camera, materials and framing standardized for presentation; mesh culling disabled in editing viewers to keep moving figures visible."
+    },
+    {
+      "id": "content",
+      "family": "Content editing",
+      "title": "Change action, retain the style",
+      "dataset": "Style–content benchmark",
+      "case_id": "content_00002",
+      "condition": "Input motion + “Change the action to walk while keeping the same style”",
+      "input": {
+        "index": 2,
+        "prompt_id": "content_00002",
+        "instruction": "Change the action to walk while keeping the same style.",
+        "style": "Armaching",
+        "action": "Walk",
+        "source_action": "Hop",
+        "path": "cases/content/00002.json"
+      },
+      "source_url": "https://zeyuling-motion-edit-leaderboard.static.hf.space/index.html#qualitative",
+      "source_method_key": "motioncanvas",
+      "source_viewer_selection": {
+        "track": "content",
+        "index": 2
+      },
+      "panels": [
+        "Input motion",
+        "MotionCanvas"
+      ],
+      "fps": 30,
+      "frames": 106,
+      "duration_seconds": 3.533333333333333,
+      "width": 768,
+      "height": 480,
+      "path": "assets/benchmarks/content.mp4",
+      "bytes": 303260,
+      "sha256": "adac8ce77bf984e635eba6d9854f90b47ea91e59b0b963d7723d4ac4396ca8ec",
+      "rendering": "Captured from Motius benchmark SMPL decoding; original motion samples and frame rate preserved. Camera, materials and framing standardized for presentation; mesh culling disabled in editing viewers to keep moving figures visible."
+    },
+    {
+      "id": "in-betweening",
+      "family": "Temporal control",
+      "title": "Connect the endpoints",
+      "dataset": "HumanML3D",
+      "case_id": "008463",
+      "condition": "First and last frames + text",
+      "input": {
+        "case_id": "008463",
+        "sample_id": "008463",
+        "references": [
+          "man walks along, then bends down and picks something up.",
+          "Condition: In-betweening: first and last frame"
+        ],
+        "condition_intervals": [
+          [
+            0,
+            1
+          ],
+          [
+            200,
+            201
+          ]
+        ]
+      },
+      "source_url": "https://zeyuling-temporal-condition-leaderboard.static.hf.space/cases/both_1f/index.html?method=ours&case=008463",
+      "source_method_key": "ours",
+      "panels": [
+        "MotionCanvas"
+      ],
+      "fps": 30,
+      "frames": 201,
+      "duration_seconds": 6.7,
+      "width": 768,
+      "height": 480,
+      "path": "assets/benchmarks/in-betweening.mp4",
+      "bytes": 556909,
+      "sha256": "c62b0fd6b276572b1861d8bfa8943f38df0d44be63a67f1c4f751dfa0ed8fdb0",
+      "rendering": "Captured from Motius benchmark SMPL decoding; original motion samples and frame rate preserved. Camera, materials and framing standardized for presentation; mesh culling disabled in editing viewers to keep moving figures visible."
+    },
+    {
+      "id": "instruction",
+      "family": "Instruction editing",
+      "title": "Change a motion with words",
+      "dataset": "MotionFix",
+      "case_id": "000052",
+      "condition": "Input motion + “Make a wider turn”",
+      "input": {
+        "index": 3,
+        "prompt_id": "000052",
+        "instruction": "MAKE A WIDER TURN",
+        "path": "cases/00003.json"
+      },
+      "source_url": "https://zeyuling-instruction-editing-leaderboard.static.hf.space/index.html#qualitative",
+      "source_method_key": "motioncanvas",
+      "source_viewer_selection": {
+        "track": "instruction",
+        "index": 3
+      },
+      "panels": [
+        "Input motion",
+        "MotionCanvas"
+      ],
+      "fps": 30,
+      "frames": 120,
+      "duration_seconds": 4,
+      "width": 768,
+      "height": 480,
+      "path": "assets/benchmarks/instruction.mp4",
+      "bytes": 341935,
+      "sha256": "43a77c0335f3a8806ba471d3f1632982344405b38288edec9e1e1fa158856e08",
+      "rendering": "Captured from Motius benchmark SMPL decoding; original motion samples and frame rate preserved. Camera, materials and framing standardized for presentation; mesh culling disabled in editing viewers to keep moving figures visible."
+    },
+    {
+      "id": "keyframes",
+      "family": "Temporal control",
+      "title": "Fill between sparse keyframes",
+      "dataset": "HumanML3D",
+      "case_id": "003424",
+      "condition": "Adaptive sparse keyframes + text",
+      "input": {
+        "case_id": "003424",
+        "sample_id": "003424",
+        "references": [
+          "a person hops in place twice.",
+          "Condition: Keyframe: adaptive sparse frames"
+        ],
+        "condition_intervals": [
+          [
+            0,
+            1
+          ],
+          [
+            28,
+            29
+          ],
+          [
+            40,
+            41
+          ],
+          [
+            81,
+            82
+          ],
+          [
+            95,
+            96
+          ],
+          [
+            107,
+            108
+          ],
+          [
+            141,
+            142
+          ]
+        ]
+      },
+      "source_url": "https://zeyuling-temporal-condition-leaderboard.static.hf.space/cases/adaptive_keyframes/index.html?method=ours&case=003424",
+      "source_method_key": "ours",
+      "panels": [
+        "MotionCanvas"
+      ],
+      "fps": 30,
+      "frames": 142,
+      "duration_seconds": 4.733333333333333,
+      "width": 768,
+      "height": 480,
+      "path": "assets/benchmarks/keyframes.mp4",
+      "bytes": 308375,
+      "sha256": "6e0010360340b97744e38a2777959c9a17f686b40c8b356b298a587b520594ea",
+      "rendering": "Captured from Motius benchmark SMPL decoding; original motion samples and frame rate preserved. Camera, materials and framing standardized for presentation; mesh culling disabled in editing viewers to keep moving figures visible."
+    },
+    {
+      "id": "no-text",
+      "family": "Temporal control",
+      "title": "Continue without language",
+      "dataset": "HumanML3D",
+      "case_id": "009613",
+      "condition": "First 20% of frames · no text",
+      "input": {
+        "case_id": "009613",
+        "sample_id": "009613",
+        "references": [
+          "the person is running backwards quickly.",
+          "Condition: Prediction: first 20%, motion-only"
+        ],
+        "condition_intervals": [
+          [
+            0,
+            19
+          ]
+        ]
+      },
+      "source_url": "https://zeyuling-temporal-condition-leaderboard.static.hf.space/cases/pre20_uncond/index.html?method=ours&case=009613",
+      "source_method_key": "ours",
+      "panels": [
+        "MotionCanvas"
+      ],
+      "fps": 30,
+      "frames": 97,
+      "duration_seconds": 3.2333333333333334,
+      "width": 768,
+      "height": 480,
+      "path": "assets/benchmarks/no-text.mp4",
+      "bytes": 267578,
+      "sha256": "10c0eb8c9dab396f4f60b5bada9c30ffa54fb2ecfe020791ff87e892832ce28d",
+      "rendering": "Captured from Motius benchmark SMPL decoding; original motion samples and frame rate preserved. Camera, materials and framing standardized for presentation; mesh culling disabled in editing viewers to keep moving figures visible."
+    },
+    {
+      "id": "prediction",
+      "family": "Temporal control",
+      "title": "Continue from a starting pose",
+      "dataset": "HumanML3D",
+      "case_id": "014457",
+      "condition": "First frame + text",
+      "input": {
+        "case_id": "014457",
+        "sample_id": "014457",
+        "references": [
+          "the person swings a golf club.",
+          "Condition: Prediction: first frame"
+        ],
+        "condition_intervals": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "source_url": "https://zeyuling-temporal-condition-leaderboard.static.hf.space/cases/start_1f/index.html?method=ours&case=014457",
+      "source_method_key": "ours",
+      "panels": [
+        "MotionCanvas"
+      ],
+      "fps": 30,
+      "frames": 94,
+      "duration_seconds": 3.1333333333333333,
+      "width": 768,
+      "height": 480,
+      "path": "assets/benchmarks/prediction.mp4",
+      "bytes": 235947,
+      "sha256": "4538f67437ec21cbc3ea84833d21763c3f366609cc372619e963f67e326ad22c",
+      "rendering": "Captured from Motius benchmark SMPL decoding; original motion samples and frame rate preserved. Camera, materials and framing standardized for presentation; mesh culling disabled in editing viewers to keep moving figures visible."
+    },
+    {
+      "id": "sequential",
+      "family": "Sequential generation",
+      "title": "Compose successive actions",
+      "dataset": "BABEL",
+      "case_id": "val_8738",
+      "condition": "Timed sequence of action descriptions",
+      "input": {
+        "case_id": "val_8738",
+        "sample_id": "val_8738",
+        "segments": [
+          {
+            "caption": "A person walks.",
+            "start_frame": 0,
+            "end_frame": 39
+          },
+          {
+            "caption": "A person bends down at the waist, then reaches both hands toward an object, then bends over, then grabs the object.",
+            "start_frame": 39,
+            "end_frame": 85
+          },
+          {
+            "caption": "A person lifts an object, then puts down the object.",
+            "start_frame": 85,
+            "end_frame": 146
+          },
+          {
+            "caption": "A person turns around.",
+            "start_frame": 146,
+            "end_frame": 179
+          },
+          {
+            "caption": "A person walks.",
+            "start_frame": 179,
+            "end_frame": 221
+          }
+        ],
+        "references": null
+      },
+      "source_url": "https://zeyuling-babel-sequential-generation-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&case=val_8738",
+      "source_method_key": "motioncanvas",
+      "panels": [
+        "MotionCanvas"
+      ],
+      "fps": 30,
+      "frames": 221,
+      "duration_seconds": 7.366666666666666,
+      "width": 768,
+      "height": 480,
+      "path": "assets/benchmarks/sequential.mp4",
+      "bytes": 557169,
+      "sha256": "f955c5325b065781630946ddcb1976474deef4e31a68eee8967eb36bc08b3804",
+      "rendering": "Captured from Motius benchmark SMPL decoding; original motion samples and frame rate preserved. Camera, materials and framing standardized for presentation; mesh culling disabled in editing viewers to keep moving figures visible."
+    },
+    {
+      "id": "sequential-lift",
+      "family": "Sequential generation",
+      "title": "Connect a three-part request",
+      "dataset": "HumanML3D",
+      "case_id": "val_7982",
+      "condition": "Walk forward → lift → walk back",
+      "input": {
+        "case_id": "val_7982",
+        "sample_id": "val_7982",
+        "segments": [
+          {
+            "caption": "A person walks forward.",
+            "start_frame": 0,
+            "end_frame": 54
+          },
+          {
+            "caption": "A person lifts.",
+            "start_frame": 54,
+            "end_frame": 137
+          },
+          {
+            "caption": "A person walks back.",
+            "start_frame": 137,
+            "end_frame": 196
+          }
+        ],
+        "references": null
+      },
+      "source_url": "https://zeyuling-babel-sequential-generation-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&case=val_7982",
+      "source_method_key": "motioncanvas",
+      "panels": [
+        "MotionCanvas"
+      ],
+      "fps": 30,
+      "frames": 196,
+      "duration_seconds": 6.533333333333333,
+      "width": 768,
+      "height": 480,
+      "path": "assets/benchmarks/sequential-lift.mp4",
+      "bytes": 521410,
+      "sha256": "7b2753bf6bcea1c3168055539c1092b1e20273253b03e91a1d50c538ebee430b",
+      "rendering": "Captured from Motius benchmark SMPL decoding; original motion samples and frame rate preserved. Camera, materials and framing standardized for presentation; mesh culling disabled in editing viewers to keep moving figures visible."
+    },
+    {
+      "id": "style",
+      "family": "Style editing",
+      "title": "Change style, retain the action",
+      "dataset": "Style–content benchmark",
+      "case_id": "style_00000",
+      "condition": "Input motion + “Perform hop in the angry style”",
+      "input": {
+        "index": 0,
+        "prompt_id": "style_00000",
+        "instruction": "Perform hop in the angry style.",
+        "style": "Angry",
+        "action": "Hop",
+        "source_action": "",
+        "path": "cases/style/00000.json"
+      },
+      "source_url": "https://zeyuling-motion-edit-leaderboard.static.hf.space/index.html#qualitative",
+      "source_method_key": "motioncanvas",
+      "source_viewer_selection": {
+        "track": "style",
+        "index": 0
+      },
+      "panels": [
+        "Input motion",
+        "MotionCanvas"
+      ],
+      "fps": 30,
+      "frames": 76,
+      "duration_seconds": 2.533333333333333,
+      "width": 768,
+      "height": 480,
+      "path": "assets/benchmarks/style.mp4",
+      "bytes": 279215,
+      "sha256": "e55117a0de9da33b677cd0d25a00581509c84d5efd28f43ab7d55a15e1d819f0",
+      "rendering": "Captured from Motius benchmark SMPL decoding; original motion samples and frame rate preserved. Camera, materials and framing standardized for presentation; mesh culling disabled in editing viewers to keep moving figures visible."
+    },
+    {
+      "id": "text-to-motion",
+      "family": "Text-to-motion",
+      "title": "Start with language alone",
+      "dataset": "HumanML3D",
+      "case_id": "004822",
+      "condition": "Text only · no kinematic cues",
+      "input": {
+        "case_id": "004822",
+        "sample_id": "004822",
+        "case_key": null,
+        "references": [
+          "person walking at a average pace forward, swaying arms and torso with a sense of swagger"
+        ],
+        "segments": null,
+        "outputs": null
+      },
+      "source_url": "https://zeyuling-t2m-humanml3d-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&case=004822",
+      "source_method_key": "motioncanvas",
+      "panels": [
+        "MotionCanvas"
+      ],
+      "fps": 30,
+      "frames": 300,
+      "duration_seconds": 10,
+      "width": 768,
+      "height": 480,
+      "path": "assets/benchmarks/text-to-motion.mp4",
+      "bytes": 654914,
+      "sha256": "6b07d2502422063563dac5266b6b76c138b8a709bca633dff25d79ad03f09b86",
+      "rendering": "Captured from Motius benchmark SMPL decoding; original motion samples and frame rate preserved. Camera, materials and framing standardized for presentation; mesh culling disabled in editing viewers to keep moving figures visible."
     }
   ],
-  "paper_figure_sha256": "3def3f5c5b202b7a02f12174c51009cd71f102f8f53be421604b47a72f92a018"
+  "paper_figure_sha256": "3def3f5c5b202b7a02f12174c51009cd71f102f8f53be421604b47a72f92a018",
+  "readme": {
+    "cover": "assets/readme/cover.png",
+    "source": "Approved V52 character frames, with no narration subtitles; editorial cover layout.",
+    "character_previews": [
+      "assets/readme/route.webp",
+      "assets/readme/footsteps.webp",
+      "assets/readme/jump.webp",
+      "assets/readme/editing.webp",
+      "assets/readme/boxing.webp",
+      "assets/readme/basketball.webp"
+    ]
+  }
 }
