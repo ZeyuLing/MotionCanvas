@@ -56,8 +56,8 @@ marks generated frames. The local-control marker identifies the controlled wrist
       First pose + text
     </td>
     <td width="50%" valign="top">
-      <a href="https://zeyuling.github.io/MotionCanvas/#case-body-part-reach"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/body-part-reach.webp?case=003245" /><img src="assets/benchmarks/body-part-reach.gif?case=003245" loading="lazy" width="100%" alt="Coordinated arm raise: Sparse wrist positions + text" /></picture></a>
-      <b>Coordinated arm raise</b><br />
+      <a href="https://zeyuling.github.io/MotionCanvas/#case-body-part-reach"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/body-part-reach.webp?case=001014" /><img src="assets/benchmarks/body-part-reach.gif?case=001014" loading="lazy" width="100%" alt="Arm-crossing gesture: Sparse wrist positions + text" /></picture></a>
+      <b>Arm-crossing gesture</b><br />
       Sparse wrist positions + text
     </td>
   </tr>

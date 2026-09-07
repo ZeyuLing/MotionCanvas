@@ -137,15 +137,15 @@
     {
       "id": "body-part-reach",
       "family": "Body-part control",
-      "title": "Coordinate both arms from one wrist",
+      "title": "Coordinate an arm-crossing gesture",
       "dataset": "HumanML3D",
-      "case_id": "003245",
+      "case_id": "001014",
       "condition": "Sparse left-wrist position targets + text",
       "input": {
-        "case_id": "003245",
-        "sample_id": "003245",
+        "case_id": "001014",
+        "sample_id": "001014",
         "references": [
-          "a person raises both arms above their head while standing, the fingers of both hands are touching when raised, then the arms are lowered."
+          "a person crosses their arms in front of their chest, then drops them back at their sides."
         ],
         "condition": {
           "label": "Left wrist · XYZ position · sparse every 30 frames",
@@ -177,24 +177,24 @@
             91
           ],
           [
-            101,
-            102
+            120,
+            121
           ]
         ]
       },
-      "source_url": "https://zeyuling-body-part-condition-humanml3d-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&case=003245",
+      "source_url": "https://zeyuling-body-part-condition-humanml3d-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&case=001014",
       "source_method_key": "motioncanvas",
       "panels": [
         "MotionCanvas"
       ],
       "fps": 20,
-      "frames": 102,
-      "duration_seconds": 5.1,
+      "frames": 121,
+      "duration_seconds": 6.05,
       "width": 768,
       "height": 480,
       "path": "assets/benchmarks/body-part-reach.mp4",
-      "bytes": 236627,
-      "sha256": "bd8a85cad97699aaeb122d70490d61762d1cb8d5dfaf6a16d5ff99acd07a38f8",
+      "bytes": 239392,
+      "sha256": "acfc61be4e9d21aeb2eb593a7537661c98c837372ce0f9be93d41db46011fd1b",
       "rendering": "Captured from Motius benchmark SMPL decoding; original motion samples and frame rate preserved. Camera, materials and framing standardized for presentation; mesh culling disabled in editing viewers to keep moving figures visible."
     },
     {
