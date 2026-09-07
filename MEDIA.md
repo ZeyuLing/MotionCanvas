@@ -10,6 +10,11 @@ text, two local wrist-control cases, two BABEL sequences, instruction editing,
 style editing, content editing, and text-to-motion. The gallery does not include
 corruption or repair previews.
 
+The featured local-control and sequential previews are HumanML3D case `003245`
+and BABEL case `val_6604`. Their complete frame sequences were inspected for
+motion continuity and input correspondence before selection; these are curated
+examples, not a substitute for the aggregate benchmark results.
+
 The previews use each benchmark viewer's SMPL decoder and original motion frames.
 No motion post-processing is applied. Camera, materials, and framing are standardized;
 editing comparisons use input and output side by side. Mesh frustum culling is

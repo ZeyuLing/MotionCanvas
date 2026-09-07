@@ -137,15 +137,15 @@
     {
       "id": "body-part-reach",
       "family": "Body-part control",
-      "title": "Coordinate around a local target",
+      "title": "Coordinate both arms from one wrist",
       "dataset": "HumanML3D",
-      "case_id": "004945",
+      "case_id": "003245",
       "condition": "Sparse left-wrist position targets + text",
       "input": {
-        "case_id": "004945",
-        "sample_id": "004945",
+        "case_id": "003245",
+        "sample_id": "003245",
         "references": [
-          "person is bent down trying to pick up stuff, left arm is moved to the back, picks up more stuff and touches back again while bending down"
+          "a person raises both arms above their head while standing, the fingers of both hands are touching when raised, then the arms are lowered."
         ],
         "condition": {
           "label": "Left wrist · XYZ position · sparse every 30 frames",
@@ -177,40 +177,24 @@
             91
           ],
           [
-            120,
-            121
-          ],
-          [
-            150,
-            151
-          ],
-          [
-            180,
-            181
-          ],
-          [
-            210,
-            211
-          ],
-          [
-            224,
-            225
+            101,
+            102
           ]
         ]
       },
-      "source_url": "https://zeyuling-body-part-condition-humanml3d-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&case=004945",
+      "source_url": "https://zeyuling-body-part-condition-humanml3d-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&case=003245",
       "source_method_key": "motioncanvas",
       "panels": [
         "MotionCanvas"
       ],
       "fps": 20,
-      "frames": 225,
-      "duration_seconds": 11.25,
+      "frames": 102,
+      "duration_seconds": 5.1,
       "width": 768,
       "height": 480,
       "path": "assets/benchmarks/body-part-reach.mp4",
-      "bytes": 541056,
-      "sha256": "9929d9f2f06093868e2f5ec10177dfa3289943cb5280a4f6338be704b02557d1",
+      "bytes": 236627,
+      "sha256": "bd8a85cad97699aaeb122d70490d61762d1cb8d5dfaf6a16d5ff99acd07a38f8",
       "rendering": "Captured from Motius benchmark SMPL decoding; original motion samples and frame rate preserved. Camera, materials and framing standardized for presentation; mesh culling disabled in editing viewers to keep moving figures visible."
     },
     {
@@ -457,55 +441,45 @@
     {
       "id": "sequential",
       "family": "Sequential generation",
-      "title": "Compose successive actions",
+      "title": "Connect standing, walking, and stopping",
       "dataset": "BABEL",
-      "case_id": "val_8738",
-      "condition": "Timed sequence of action descriptions",
+      "case_id": "val_6604",
+      "condition": "Stand → walk left → stop and stand",
       "input": {
-        "case_id": "val_8738",
-        "sample_id": "val_8738",
+        "case_id": "val_6604",
+        "sample_id": "val_6604",
         "segments": [
           {
-            "caption": "A person walks.",
+            "caption": "A person stands.",
             "start_frame": 0,
-            "end_frame": 39
+            "end_frame": 44
           },
           {
-            "caption": "A person bends down at the waist, then reaches both hands toward an object, then bends over, then grabs the object.",
-            "start_frame": 39,
-            "end_frame": 85
+            "caption": "A person walks to the left.",
+            "start_frame": 44,
+            "end_frame": 118
           },
           {
-            "caption": "A person lifts an object, then puts down the object.",
-            "start_frame": 85,
-            "end_frame": 146
-          },
-          {
-            "caption": "A person turns around.",
-            "start_frame": 146,
-            "end_frame": 179
-          },
-          {
-            "caption": "A person walks.",
-            "start_frame": 179,
-            "end_frame": 221
+            "caption": "A person stops, then stands.",
+            "start_frame": 118,
+            "end_frame": 158
           }
         ],
         "references": null
       },
-      "source_url": "https://zeyuling-babel-sequential-generation-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&case=val_8738",
+      "source_url": "https://zeyuling-babel-sequential-generation-leaderboard.static.hf.space/cases/index.html?method=motioncanvas&case=val_6604",
       "source_method_key": "motioncanvas",
       "panels": [
         "MotionCanvas"
       ],
       "fps": 30,
-      "frames": 221,
-      "duration_seconds": 7.366666666666666,
+      "frames": 158,
+      "duration_seconds": 5.266666666666667,
       "width": 768,
       "height": 480,
       "path": "assets/benchmarks/sequential.mp4",
-      "bytes": 557169,
-      "sha256": "f955c5325b065781630946ddcb1976474deef4e31a68eee8967eb36bc08b3804",
+      "bytes": 404854,
+      "sha256": "405103e7b024bda2666150f18e225e7f8bd0045cff97bc16633421250cf00c19",
       "rendering": "Captured from Motius benchmark SMPL decoding; original motion samples and frame rate preserved. Camera, materials and framing standardized for presentation; mesh culling disabled in editing viewers to keep moving figures visible."
     },
     {

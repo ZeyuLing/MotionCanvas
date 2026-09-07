@@ -56,16 +56,16 @@ marks generated frames. The local-control marker identifies the controlled wrist
       First pose + text
     </td>
     <td width="50%" valign="top">
-      <a href="https://zeyuling.github.io/MotionCanvas/#case-body-part-reach"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/body-part-reach.webp" /><img src="assets/benchmarks/body-part-reach.gif" loading="lazy" width="100%" alt="Reaching with local targets: Sparse wrist positions + text" /></picture></a>
-      <b>Reaching with local targets</b><br />
+      <a href="https://zeyuling.github.io/MotionCanvas/#case-body-part-reach"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/body-part-reach.webp?case=003245" /><img src="assets/benchmarks/body-part-reach.gif?case=003245" loading="lazy" width="100%" alt="Coordinated arm raise: Sparse wrist positions + text" /></picture></a>
+      <b>Coordinated arm raise</b><br />
       Sparse wrist positions + text
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://zeyuling.github.io/MotionCanvas/#case-sequential"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/sequential.webp" /><img src="assets/benchmarks/sequential.gif" loading="lazy" width="100%" alt="Sequential generation: Five timed action descriptions" /></picture></a>
+      <a href="https://zeyuling.github.io/MotionCanvas/#case-sequential"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/sequential.webp?case=val_6604" /><img src="assets/benchmarks/sequential.gif?case=val_6604" loading="lazy" width="100%" alt="Sequential generation: Stand → walk left → stop" /></picture></a>
       <b>Sequential generation</b><br />
-      Five timed action descriptions
+      Stand → walk left → stop
     </td>
     <td width="50%" valign="top">
       <a href="https://zeyuling.github.io/MotionCanvas/#case-instruction"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/benchmarks/instruction.webp" /><img src="assets/benchmarks/instruction.gif" loading="lazy" width="100%" alt="Instruction editing: “Make a wider turn”" /></picture></a>
