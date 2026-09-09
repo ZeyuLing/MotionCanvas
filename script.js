@@ -75,6 +75,7 @@ const benchmarkButtons = [...document.querySelectorAll('[data-benchmark-filter]'
 benchmarkFilters.hidden = false;
 benchmarkButtons.forEach(button => button.addEventListener('click', () => {
   const selected = button.dataset.benchmarkFilter;
+  document.querySelector('.benchmark-grid').dataset.filtered = String(selected !== 'all');
   benchmarkButtons.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
   let count = 0;
   benchmarkCards.forEach(card => {
@@ -83,8 +84,11 @@ benchmarkButtons.forEach(button => button.addEventListener('click', () => {
     if (!show) card.querySelector('video').pause();
     else count++;
   });
-  document.querySelector('.benchmark-count').textContent = `${count} ${count === 1 ? 'example' : 'examples'}`;
+  document.querySelector('.benchmark-count').textContent = selected === 'all' ? `${count} examples · 4 per benchmark` : `${count} examples`;
 }));
+// Shareable filters preserve the benchmark context of README gallery links.
+const initialBenchmark = new URLSearchParams(location.search).get('benchmark');
+if (initialBenchmark) benchmarkButtons.find(b => b.dataset.benchmarkFilter === initialBenchmark)?.click();
 const benchmarkObserver = new IntersectionObserver(entries => {
   entries.forEach(({target, isIntersecting}) => {
     if (!isIntersecting) target.pause();

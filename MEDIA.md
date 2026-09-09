@@ -1,13 +1,18 @@
 # Media notes
 
-The narrated film and six character clips are presentation excerpts from the
-approved MotionCanvas demonstration. The website does not present these edited
-presentation clips as raw benchmark measurements.
+The narrated film is the September 2026 editorial update: the current paper title,
+Figure 2 and terminology replace the earlier introduction and narration. It
+retains the approved V52 motion frames, camera and trajectory-completion effects.
+The six character clips are excerpts from that approved motion demonstration.
+The website does not present these edited presentation clips as raw benchmark
+measurements.
 
-The benchmark gallery contains twelve persisted MotionCanvas inference cases from
-Motius: temporal prediction, in-betweening, sparse keyframes, continuation without
-text, two local wrist-control cases, two BABEL sequences, instruction editing,
-style editing, content editing, and text-to-motion. The gallery does not include
+The benchmark gallery contains 24 persisted MotionCanvas inference cases from
+Motius, with four examples in each of six benchmark collections: temporal control,
+body-part control, BABEL sequential generation, instruction editing, style–content
+editing, and text-to-motion. The style–content collection includes two style and
+two content edits. The temporal collection covers prediction, in-betweening,
+nonuniform keyframes, and continuation without text. The gallery does not include
 corruption or repair previews.
 
 The featured local-control and sequential previews are HumanML3D case `001014`
@@ -15,9 +20,13 @@ and BABEL case `val_6604`. Their complete frame sequences were inspected for
 motion continuity and input correspondence before selection; these are curated
 examples, not a substitute for the aggregate benchmark results.
 
-The local-control selection also underwent wrist-position and rotation continuity
-screening and enlarged consecutive-frame inspection. Its original benchmark
-motion was retained without smoothing or joint corrections.
+The September 2026 expansion screened 37 candidate cases using viewer previews.
+Final non-editing candidates underwent per-frame joint-continuity checks and
+enlarged inspection around detected changes; editing candidates were inspected
+side by side across the complete action. A wrist-pulling local-control case and
+an ambiguous opposite-leg edit were excluded. These checks guide visual selection,
+not a new benchmark score. Original benchmark motions were retained without
+smoothing or joint corrections.
 
 The previews use each benchmark viewer's SMPL decoder and original motion frames.
 No motion post-processing is applied. Camera, materials, and framing are standardized;
@@ -35,7 +44,8 @@ deep links. The character film and benchmark outputs are distinct media collecti
 The README cover and six character stills use approved V52 frames without narration
 subtitles. Only the cover's typography and layout are new.
 
-The method figure is the paper figure used in the current demonstration.
+The method figure is Figure 2 from paper revision `95c4fb06`. It is exported
+directly from the paper PDF, rather than reconstructed for the website.
 
 Character designs, body models, and other third-party assets retain their
 respective rights and licenses. Rendered previews do not grant permission to
