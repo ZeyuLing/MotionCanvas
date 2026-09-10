@@ -24,18 +24,18 @@ motion for editing. Cue imputation preserves the specified canvas values through
 The complete **2:38 narrated film** combines kinematic control, motion editing, and character
 animation. Explore individual scenes below, or watch it end to end.
 
-<p><b><a href="https://zeyuling.github.io/MotionCanvas/#demo">▶ Full film with chapters</a></b> &nbsp; · &nbsp; <a href="https://zeyuling.github.io/MotionCanvas/assets/media/motioncanvas-v54-editorial-1080p.mp4">1080p MP4</a> &nbsp; · &nbsp; <a href="https://github.com/ZeyuLing/MotionCanvas/releases/download/demo-v54-editorial/motioncanvas-demo-1440p.mp4">1440p original</a></p>
+<p><b><a href="https://zeyuling.github.io/MotionCanvas/#demo">▶ Full film with chapters</a></b> &nbsp; · &nbsp; <a href="https://zeyuling.github.io/MotionCanvas/assets/media/motioncanvas-v56-complete-1080p.mp4">1080p MP4</a> &nbsp; · &nbsp; <a href="https://github.com/ZeyuLing/MotionCanvas/releases/download/demo-v56-complete/motioncanvas-demo-1440p.mp4">1440p original</a></p>
 
 <table>
   <tr>
-    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/route.mp4"><img src="assets/readme/route.webp" alt="Routes &amp; local targets" width="100%" /></a><br /><b>Routes &amp; local targets</b></td>
-    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/footsteps.mp4"><img src="assets/readme/footsteps.webp" alt="Footsteps &amp; heading" width="100%" /></a><br /><b>Footsteps &amp; heading</b></td>
-    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/jump.mp4"><img src="assets/readme/jump.webp" alt="Key poses &amp; trajectories" width="100%" /></a><br /><b>Key poses &amp; trajectories</b></td>
+    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/route-v56.mp4"><img src="assets/showcase/route-v56.webp" alt="Routes &amp; local targets" width="100%" /></a><br /><b>Routes &amp; local targets</b></td>
+    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/footsteps-v56.mp4"><img src="assets/showcase/footsteps-v56.webp" alt="Footsteps &amp; heading" width="100%" /></a><br /><b>Footsteps &amp; heading</b></td>
+    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/jump-v56.mp4"><img src="assets/showcase/jump-v56.webp" alt="Key poses &amp; trajectories" width="100%" /></a><br /><b>Key poses &amp; trajectories</b></td>
   </tr>
   <tr>
-    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/editing.mp4"><img src="assets/readme/editing.webp" alt="Language-guided editing" width="100%" /></a><br /><b>Language-guided editing</b></td>
-    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/boxing.mp4"><img src="assets/readme/boxing.webp" alt="Composed hand controls" width="100%" /></a><br /><b>Composed hand controls</b></td>
-    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/basketball.mp4"><img src="assets/readme/basketball.webp" alt="Timed spatial targets" width="100%" /></a><br /><b>Timed spatial targets</b></td>
+    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/editing-v56.mp4"><img src="assets/showcase/editing-v56.webp" alt="Language-guided editing" width="100%" /></a><br /><b>Language-guided editing</b></td>
+    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/boxing-v56.mp4"><img src="assets/showcase/boxing-v56.webp" alt="Composed hand controls" width="100%" /></a><br /><b>Composed hand controls</b></td>
+    <td width="33%" align="center"><a href="https://zeyuling.github.io/MotionCanvas/assets/showcase/basketball-v56.mp4"><img src="assets/showcase/basketball-v56.webp" alt="Timed spatial targets" width="100%" /></a><br /><b>Timed spatial targets</b></td>
   </tr>
 </table>
 

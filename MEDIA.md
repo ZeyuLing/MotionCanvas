@@ -1,9 +1,10 @@
 # Media notes
 
 The narrated film is the September 2026 editorial update: the current paper title,
-Figure 2 and terminology replace the earlier introduction and narration. It
-retains the approved V52 motion frames, camera and trajectory-completion effects.
-The six character clips are excerpts from that approved motion demonstration.
+Figure 2 and terminology replace the earlier introduction and narration. The V56 complete film also incorporates anatomical pose-cue skeletons, corrected
+vault-rail heights, and post-dunk planted-foot support. It retains the authored
+camera, timing, trajectory-completion effects, narration and music. The six
+character clips are excerpts from this updated full demonstration.
 The website does not present these edited presentation clips as raw benchmark
 measurements.
 
@@ -41,8 +42,9 @@ Case identifiers, input conditions, source viewers, and MP4 hashes are recorded 
 the case index and track recorded there; these viewers do not expose case-specific
 deep links. The character film and benchmark outputs are distinct media collections.
 
-The README cover and six character stills use approved V52 frames without narration
-subtitles. Only the cover's typography and layout are new.
+The README cover retains the established editorial design. The six character
+stills use the V56 picture-only frames without narration subtitles. Earlier
+versioned masters and release assets remain available in the release history.
 
 The method figure is Figure 2 from paper revision `95c4fb06`. It is exported
 directly from the paper PDF, rather than reconstructed for the website.

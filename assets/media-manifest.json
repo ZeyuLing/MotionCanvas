@@ -1,11 +1,11 @@
 {
-  "version": "V54 editorial",
-  "master_sha256": "62fc9b5827ef26693f30c37f8b1c6eb245882cb27f18287de09bf6a4be03b4f4",
+  "version": "V56 complete",
+  "master_sha256": "d85bcc931274d67100f04db08e3c1dd5003a3516b0336aab988f5fcbeb767000",
   "master_duration_seconds": 158.03333333333333,
   "web_video": {
-    "path": "assets/media/motioncanvas-v54-editorial-1080p.mp4",
-    "bytes": 70073730,
-    "sha256": "c928b48d6fd3e8e352dca93daca4811cb707250d9048cdb2c39b667cb550aaf3"
+    "path": "assets/media/motioncanvas-v56-complete-1080p.mp4",
+    "bytes": 67457221,
+    "sha256": "210578cba32dfcca0f107e72af9aed92ac20382b0c1e7d444c65c508d2b0c8a9"
   },
   "showcase_source": "Approved narrated demonstration; clips are presentation excerpts, not benchmark measurements.",
   "clips": [
@@ -13,49 +13,55 @@
       "id": "route",
       "start_seconds": 27,
       "duration_seconds": 15,
-      "path": "assets/showcase/route.mp4",
-      "sha256": "603aa59a199c25ec1adfe60e2fea8e51eb092840e4c87df336b5f4fc2e8b0db0",
-      "bytes": 3784074
+      "path": "assets/showcase/route-v56.mp4",
+      "poster": "assets/showcase/route-v56.webp",
+      "sha256": "bad2538a09bf72110c30e2bf60543aa9aad3346dbe4111b9e114ff2b2701f0e9",
+      "bytes": 3864436
     },
     {
       "id": "footsteps",
       "start_seconds": 49,
       "duration_seconds": 10,
-      "path": "assets/showcase/footsteps.mp4",
-      "sha256": "9f299281dbc28d4c81ac0abb310fcf6063762259ea69c4f315e27062235e0e19",
-      "bytes": 2332360
+      "path": "assets/showcase/footsteps-v56.mp4",
+      "poster": "assets/showcase/footsteps-v56.webp",
+      "sha256": "58d58f5e51d269aa1dcfaa3275ce6892d2ad4b2fe6336667471afcab1e0fdc8d",
+      "bytes": 2377917
     },
     {
       "id": "jump",
       "start_seconds": 69,
       "duration_seconds": 14,
-      "path": "assets/showcase/jump.mp4",
-      "sha256": "22b43c96fa48031a02dd01a3019a029f5e1929c7093f89535a8c400a50af7a95",
-      "bytes": 3966666
+      "path": "assets/showcase/jump-v56.mp4",
+      "poster": "assets/showcase/jump-v56.webp",
+      "sha256": "d6b01cec7b608f3ba2e0122343ae06633474c4fa4d0a33a5a41c5262669d9f62",
+      "bytes": 4023688
     },
     {
       "id": "editing",
       "start_seconds": 89.6,
       "duration_seconds": 17.4,
-      "path": "assets/showcase/editing.mp4",
-      "sha256": "f26cf7bbb744d5df0c1cb9b4e16cfcbf7998c2a018f9e2b9498004ad762d533c",
-      "bytes": 3348174
+      "path": "assets/showcase/editing-v56.mp4",
+      "poster": "assets/showcase/editing-v56.webp",
+      "sha256": "8ddab83bc7604feed632e2ed4ee131c0039903ddcb62dfc983a80659108e8180",
+      "bytes": 3404850
     },
     {
       "id": "boxing",
       "start_seconds": 118.8,
       "duration_seconds": 10,
-      "path": "assets/showcase/boxing.mp4",
-      "sha256": "0b206169b6c9366600499c95fa1c7153e1b34d313f76d207c299f20e4b587ff8",
-      "bytes": 1925690
+      "path": "assets/showcase/boxing-v56.mp4",
+      "poster": "assets/showcase/boxing-v56.webp",
+      "sha256": "55937d777834a3c34276b16f16a7563ac400bc83aa1d8066800f0dd5441848af",
+      "bytes": 1998187
     },
     {
       "id": "basketball",
       "start_seconds": 144.8,
       "duration_seconds": 7,
-      "path": "assets/showcase/basketball.mp4",
-      "sha256": "83e63c74f95021f025c0fdc0042f1e8bb798fb7a7a07f5cb1e1ac58c4b8c3a64",
-      "bytes": 2092683
+      "path": "assets/showcase/basketball-v56.mp4",
+      "poster": "assets/showcase/basketball-v56.webp",
+      "sha256": "e09b0640726dff27145e34cc21c37516132eb585e41deb6af0f45f09cfd8c50d",
+      "bytes": 2109259
     }
   ],
   "benchmarks": [
@@ -1066,14 +1072,14 @@
   "paper_figure_sha256": "3def3f5c5b202b7a02f12174c51009cd71f102f8f53be421604b47a72f92a018",
   "readme": {
     "cover": "assets/readme/cover.png",
-    "source": "Approved V52 character frames, with no narration subtitles; editorial cover layout.",
+    "source": "Editorial cover retained from the approved V52 picture-only design; six character stills updated from V56 picture-only frames without narration subtitles.",
     "character_previews": [
-      "assets/readme/route.webp",
-      "assets/readme/footsteps.webp",
-      "assets/readme/jump.webp",
-      "assets/readme/editing.webp",
-      "assets/readme/boxing.webp",
-      "assets/readme/basketball.webp"
+      "assets/showcase/route-v56.webp",
+      "assets/showcase/footsteps-v56.webp",
+      "assets/showcase/jump-v56.webp",
+      "assets/showcase/editing-v56.webp",
+      "assets/showcase/boxing-v56.webp",
+      "assets/showcase/basketball-v56.webp"
     ]
   },
   "gallery": {
@@ -1099,7 +1105,21 @@
     "title": "MotionCanvas: Learning Implicit Motion Planning from Composable Kinematic Cues",
     "paper_revision": "95c4fb06783cb98e3547f592b468be91485c3d13",
     "narration_updated": true,
-    "motion_source": "Approved V52 frames",
-    "source_motion_modified": false
+    "motion_source": "V56 integrated presentation frames",
+    "source_motion_modified": true
+  },
+  "scene_update": {
+    "anatomical_pose_cues": true,
+    "vault_rail_heights_corrected": true,
+    "post_dunk_planted_support": true,
+    "render_engine": "Cycles",
+    "render_resolution": [
+      2560,
+      1440
+    ],
+    "render_samples": 256,
+    "unchanged_editorial": "V54 title, method cards, narration, captions and music",
+    "source_camera_and_timing_preserved": true,
+    "note": "Scene-level presentation corrections; benchmark inference motions are unchanged."
   }
 }
